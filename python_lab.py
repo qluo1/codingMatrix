@@ -24,7 +24,7 @@ Y1 = { 4, 5, 6 }
 
 ## Task 8: enter in the two new sets
 X2 = { 1,2,3 }
-Y2 = { 2, 3,4 }
+Y2 = { 2,3,4 }
 
 ## Task 9
 base = 10
