@@ -23,18 +23,18 @@ X1 = { 1, 2, 3 }
 Y1 = { 4, 5, 6 }
 
 ## Task 8: enter in the two new sets
-X2 = { ..., ..., ... }
-Y2 = { ..., ..., ... }
+X2 = { 1,2,3 }
+Y2 = { 2, 3,4 }
 
 ## Task 9
 base = 10
 digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-three_digits_set = { ... }
+three_digits_set = { (x,y,z) for x in digits for y in digits for z in digits}
 
 ## Task 10
 S = {1, 2, 3, 4}
 T = {3, 4, 5, 6}
-S_intersect_T = { ... }
+S_intersect_T = { i for i in S if i in T }
 
 ## Task 11
 L_average = sum([20, 10, 15, 75])/len([20, 10, 15, 75]) # average of: [20, 10, 15, 75]
