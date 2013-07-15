@@ -1,0 +1,64 @@
+Which parts do you want to submit? (Ex: 1, 4-7): 1-30
+
+== Submitting "Remainder"
+
+==== Feedback: Sorry, incorrect.
+
+
+
+== Submitting "Squares Comprehension"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Powers of 2 Comprehension"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Nine Element Set"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Five Element Set"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Base 10 Three Digit Numbers"
+
+==== Feedback: Sorry, incorrect.
+
+
+
+
+== Submitting "Remove (0,0,0)"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "First Element"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Odd Numbers"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Range and Zip"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "Range Squared"
+
+==== Feedback: Sorry, incorrect.
+
+
+== Submitting "List Integers"
+
+==== Feedback: Sorry, incorrect.
+

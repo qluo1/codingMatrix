@@ -12,6 +12,7 @@ x = -9
 y = 1/2
 statement_val = 2**(y+1/2) if x+10<0 else 2**(y-1/2)
 
+from math import sqrt
 ## Task 5
 first_five_squares = { sqrt(x) for x in {1,2,3,4,5} }
 
@@ -103,11 +104,11 @@ listdict2dict = {name: d[names.index(name)] for name in names if name and names.
 def nextInts(L): return [ i+1 for i in L]
 
 ## Task 28
-def cubes(L): return [i**3 for i in L] 
+def cubes(L): return [i**3 for i in L]
 
 ## Task 29
 def dict2list(dct, keylist): return [ dct[i] for i in keylist]
 
-## Task 30 
-def list2dict(L, keylist): return {k:v for (k,v) in zip(keylist,L)} 
+## Task 30
+def list2dict(L, keylist): return {k:v for (k,v) in zip(keylist,L)}
 

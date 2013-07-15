@@ -1,4 +1,4 @@
-########                                     ######## 
+########                                     ########
 # Hi there, curious student.                        #
 #                                                   #
 # This submission script runs some tests on your    #
@@ -18,6 +18,7 @@ sourceFiles       = ['python_lab.py'] * len(sum(groups,[]))
 try:
     import python_lab as solution
     test_vars = vars(solution).copy()
+    print(test_vars)
 except Exception as exc:
     print(exc)
     print("!! It seems like you have an error in your stencil file. Please fix before submitting.")
@@ -94,10 +95,10 @@ class ModifiedDocTestRunner(doctest.DocTestRunner):
     def __init__(self, *args, **kwargs):
         self.results = []
         return super(ModifiedDocTestRunner, self).__init__(*args, checker=OutputAccepter(), **kwargs)
-    
+
     def report_success(self, out, test, example, got):
         self.results.append(got)
-    
+
     def report_unexpected_exception(self, out, test, example, exc_info):
         exf = traceback.format_exception_only(exc_info[0], exc_info[1])[-1]
         self.results.append(exf)
@@ -109,14 +110,14 @@ class OutputAccepter(doctest.OutputChecker):
 challenge_url = 'https://class.coursera.org/%s/assignment/challenge' % URL
 submit_url    = 'https://class.coursera.org/%s/assignment/submit'    % URL
 
-def submit():   
+def submit():
     print('==\n== Submitting Solutions \n==\n')
-    
+
     (login, password) = loginPrompt()
     if not login:
         print('!! Submission Cancelled')
         return
-    
+
     print('\n== Connecting to Coursera ... \n')
 
     parts = partPrompt()
@@ -138,12 +139,12 @@ def submit():
             return
 
         # to stop Coursera's strip() from doing anything, we surround in parens
-        prog_out = '(%s)' % output(part_tests) 
+        prog_out = '(%s)' % output(part_tests)
         token    = challengeResponse(login, password, ch)
         src      = source(sid)
 
         if 'DEBUG' in os.environ: print('==== Output: %s' % prog_out.replace('\n','\\n'))
-        
+
         feedback = submitSolution(login, token, sid, prog_out, src, state, ch_aux)
 
         if len(feedback.strip()) > 0:
@@ -185,12 +186,12 @@ def getChallenge(email, sid):
               'assignment_part_sid' : sid,
               'response_encoding' : 'delim'
              }
-  
+
     data = urllib.parse.urlencode(values).encode('utf-8')
     req = urllib.request.Request(challenge_url, data)
     response = urllib.request.urlopen(req)
     text = response.readall().decode('utf-8').strip()
-  
+
     # text is of the form email|ch|signature
     splits = text.split('|')
     if len(splits) != 9:
@@ -228,7 +229,7 @@ def submitSolution(email_address, ch_resp, sid, output, source, state, ch_aux):
 def source(sid):
     """ This collects the source code, for logging purposes. """
     f = open(sourceFiles[0])
-    src = f.read() 
+    src = f.read()
     f.close()
     return src
 
