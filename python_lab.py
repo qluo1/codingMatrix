@@ -57,57 +57,57 @@ exclude_zero_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 an
 first_of_tuples_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]][0]
 
 ## Task 17
-L1 = [...] # <-- want len(L1) != len(list(set(L1)))
-L2 = [...] # <-- same len(L2) == len(list(set(L2))) but L2 != list(set(L2))
+L1 = [1,2,3,1] # <-- want len(L1) != len(list(set(L1)))
+L2 = ['a','b','c'] # <-- same len(L2) == len(list(set(L2))) but L2 != list(set(L2))
 
 ## Task 18
-odd_num_list_range = {...}
+odd_num_list_range = {x for x in range(20) if x%2 != 0}
 
 ## Task 19
 L = ['A','B','C','D','E']
-range_and_zip = ...
+range_and_zip = zip(range(len(L)),L)
 
 ## Task 20
-list_sum_zip = [...]
+list_sum_zip = [sum(i) for i in zip([10,25,40],[1,15,20])]
 
 ## Task 21
 dlist = [{'James':'Sean', 'director':'Terence'}, {'James':'Roger', 'director':'Lewis'}, {'James':'Pierce', 'director':'Roger'}]
 k = 'James'
-value_list = [...]
+value_list = [i[k] for i in dlist]
 
 ## Task 22
 dlist = [{'Bilbo':'Ian','Frodo':'Elijah'},{'Bilbo':'Martin','Thorin':'Richard'}]
 k = 'Bilbo'
-value_list_modified_1 = [...] # <-- Use the same expression here
+value_list_modified_1 = [i.get(k,'NOT PRESENT') for i in dlist] # <-- Use the same expression here
 k = 'Frodo'
-value_list_modified_2 = [...] # <-- as you do here
+value_list_modified_2 = [i.get(k,'NOT PRESENT') for i in dlist] # <-- as you do here
 
 ## Task 23
-square_dict = {...}
+square_dict = {k: k**2 for k in range(99)}
 
 ## Task 24
 D = {'red','white','blue'}
-identity_dict = {...}
+identity_dict = {k: k for k in D}
 
 ## Task 25
 base = 10
-digits = set(range(10))
-representation_dict = {...}
+digits = set(range(base))
+representation_dict = {k:v for (k,v) in zip(range(base**3),[(x,y,z) for x in digits for y in digits for z in digits])}
 
 ## Task 26
 d = {0:1000.0, 1:1200.50, 2:990}
 names = ['Larry', 'Curly', 'Moe']
-listdict2dict = { ... }
+listdict2dict = {name: d[names.index(name)] for name in names if name and names.index(name) in d}
 
 ## Task 27
-def nextInts(L): return [ ... ]
+def nextInts(L): return [ i+1 for i in L]
 
 ## Task 28
-def cubes(L): return [ ... ] 
+def cubes(L): return [i**3 for i in L] 
 
 ## Task 29
-def dict2list(dct, keylist): return [ ... ]
+def dict2list(dct, keylist): return [ dct[i] for i in keylist]
 
 ## Task 30 
-def list2dict(L, keylist): return { ... } 
+def list2dict(L, keylist): return {k:v for (k,v) in zip(keylist,L)} 
 
