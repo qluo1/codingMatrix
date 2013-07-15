@@ -37,24 +37,24 @@ T = {3, 4, 5, 6}
 S_intersect_T = { ... }
 
 ## Task 11
-L_average = ... # average of: [20, 10, 15, 75]
+L_average = sum([20, 10, 15, 75])/len([20, 10, 15, 75]) # average of: [20, 10, 15, 75]
 
 ## Task 12
 LofL = [[.25, .75, .1], [-1, 0], [4, 4, 4, 4]]
-LofL_sum = ... # use form: sum([sum(...) ... ])
+LofL_sum =  sum([sum(i) for i in LofL]) # use form: sum([sum(...) ... ])
 
 ## Task 13
-cartesian_product = ... # use form: [ ... {'A','B','C'} ... {1,2,3} ... ]
+cartesian_product = [(x,y) for x in ['A','B','C'] for y in {1,2,3}] # use form: [ ... {'A','B','C'} ... {1,2,3} ... ]
 
 ## Task 14
 S = {-4, -2, 1, 2, 5, 0}
-zero_sum_list = [ ... ] 
+zero_sum_list =  [(x,y,z) for x in S for y in S for z in S if x+y+z ==0]
 
 ## Task 15
-exclude_zero_list = [ ... ]
+exclude_zero_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]]
 
 ## Task 16
-first_of_tuples_list = ...
+first_of_tuples_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]][0]
 
 ## Task 17
 L1 = [...] # <-- want len(L1) != len(list(set(L1)))
