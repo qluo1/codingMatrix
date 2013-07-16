@@ -2,7 +2,7 @@
 minutes_in_week = 7 * 24 * 60
 
 ## Task 2
-remainder_without_mod =  2304811 - 2304811/47 * 47
+remainder_without_mod = 2304811 - 2304811/47 * 47
 
 ## Task 3
 divisible_by_3 = (673 + 909) % 3 == 0
@@ -12,25 +12,24 @@ x = -9
 y = 1/2
 statement_val = 2**(y+1/2) if x+10<0 else 2**(y-1/2)
 
-from math import sqrt
 ## Task 5
-first_five_squares = { sqrt(x) for x in {1,2,3,4,5} }
+first_five_squares ={ int(x**(0.5)) for x in {1,2,3,4,5} }
 
 ## Task 6
-first_five_pows_two = { x*x for x in {0,1,2,3,4} }
+first_five_pows_two = { 2**x for x in {0,1,2,3,4} }
 
-## Task 7: enter in the two new sets
-X1 = { 1, 2, 3 }
-Y1 = { 4, 5, 6 }
+## Task 7: enter in the two new sets output nine element
+X1 = { 2, 3, 4 }
+Y1 = { 5, 6, 7 }
 
-## Task 8: enter in the two new sets
-X2 = { 1,2,3 }
-Y2 = { 2,3,4 }
+## Task 8: enter in the two new setsm five element
+X2 = { 0,1,2 }
+Y2 = { 3,3,5 }
 
 ## Task 9
-base = 10
-digits = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-three_digits_set = { (x,y,z) for x in digits for y in digits for z in digits}
+base = 2
+digits = {range(base)}
+three_digits_set = {x*base**0 + y*base**1+z*base**2 for x in digits for y in digits for z in digits}
 
 ## Task 10
 S = {1, 2, 3, 4}
@@ -52,10 +51,10 @@ S = {-4, -2, 1, 2, 5, 0}
 zero_sum_list =  [(x,y,z) for x in S for y in S for z in S if x+y+z ==0]
 
 ## Task 15
-exclude_zero_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]]
+exclude_zero_list = [(x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]
 
 ## Task 16
-first_of_tuples_list = [ [ (x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)]][0]
+first_of_tuples_list = [(x,y,z) for x in S for y in S for z in S if x+y+z ==0 and (x,y,z) != (0,0,0)][0]
 
 ## Task 17
 L1 = [1,2,3,1] # <-- want len(L1) != len(list(set(L1)))
@@ -84,7 +83,7 @@ k = 'Frodo'
 value_list_modified_2 = [i.get(k,'NOT PRESENT') for i in dlist] # <-- as you do here
 
 ## Task 23
-square_dict = {k: k**2 for k in range(99)}
+square_dict = {k: k**(0.5) for k in range(99)}
 
 ## Task 24
 D = {'red','white','blue'}
@@ -93,7 +92,8 @@ identity_dict = {k: k for k in D}
 ## Task 25
 base = 10
 digits = set(range(base))
-representation_dict = {k:v for (k,v) in zip(range(base**3),[(x,y,z) for x in digits for y in digits for z in digits])}
+# representation_dict = {k:v for (k,v) in zip(range(base**3),[(x,y,z) for x in digits for y in digits for z in digits])}
+representation_dict = {x*base**0+y*base**1+z*base**2 : (x,y,z) for x in digits for y in digits for z in digits}
 
 ## Task 26
 d = {0:1000.0, 1:1200.50, 2:990}

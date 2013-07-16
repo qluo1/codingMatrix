@@ -5,7 +5,6 @@ Which parts do you want to submit? (Ex: 1, 4-7): 1-30
 ==== Feedback: Sorry, incorrect.
 
 
-
 == Submitting "Squares Comprehension"
 
 ==== Feedback: Sorry, incorrect.
