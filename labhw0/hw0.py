@@ -20,12 +20,10 @@ def myFunctionComposition(f, g): return {k: g[v] for (k,v) in f.items()}
 ## Problem 4
 # Please only enter your numerical solution.
 
-complex_addition_a = ... 
-complex_addition_b = ...
-complex_addition_c = ...
-complex_addition_d = ...
-
-
+complex_addition_a = 5 + 3j 
+complex_addition_b = 0 + 1j
+complex_addition_c = -1 + 0.001j
+complex_addition_d = .001 + 9j
 
 ## Problem 5
 GF2_sum_1 = ...
