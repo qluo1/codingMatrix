@@ -27,8 +27,8 @@ X2 = { 0,1,2 }
 Y2 = { 3,3,5 }
 
 ## Task 9
-base = 2
-digits = {range(base)}
+base = 10
+digits = list(range(base))
 three_digits_set = {x*base**0 + y*base**1+z*base**2 for x in digits for y in digits for z in digits}
 
 ## Task 10

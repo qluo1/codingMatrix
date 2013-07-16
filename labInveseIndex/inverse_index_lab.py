@@ -48,4 +48,4 @@ def andSearch(inverseIndex, query):
     Input: an inverse index, as created by makeInverseIndex, and a list of words to query
     Output: the set of all document ids that contain _all_ of the specified words
     """
-    return set.intersection(*[set(inverseIndex[i]) for i in query]))
+    return set.intersection(*[set(inverseIndex[i]) for i in query])
