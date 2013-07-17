@@ -26,31 +26,47 @@ complex_addition_c = -1 + 0.001j
 complex_addition_d = .001 + 9j
 
 ## Problem 5
-GF2_sum_1 = ...
-GF2_sum_2 = ...
-GF2_sum_3 = ...
+GF2_sum_1 = 1
+GF2_sum_2 = 1
+GF2_sum_3 = 0
 
 
 ## Problem 6
-def mySum(L): pass
-
+def mySum(L):
+    cum = 0
+    for i in L:
+        cum += i
+    erturn sum
 
 
 ## Problem 7
-def myProduct(L): pass
-
-
+def myProduct(L):
+    prod = 0
+    for i in L:
+        prod = prod * i
 
 ## Problem 8
-def myMin(L): pass
-
+def myMin(L): 
+    min = L[0]
+    for i in L:
+        if i < min:
+            min = i
+    return min
 
 
 ## Problem 9
-def myConcat(L): pass
-
+def myConcat(L):
+    out = ''
+    for i in L:
+        out += i
+    return out
 
 
 ## Problem 10
-def myUnion(L): pass
+def myUnion(L):
+    out = set()
+    for i in L:
+        out = out | i
+    return out
+
 
