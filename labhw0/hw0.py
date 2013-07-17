@@ -27,7 +27,7 @@ complex_addition_d = .001 + 9j
 
 ## Problem 5
 GF2_sum_1 = 1
-GF2_sum_2 = 1
+GF2_sum_2 = 0
 GF2_sum_3 = 0
 
 
@@ -36,14 +36,15 @@ def mySum(L):
     cum = 0
     for i in L:
         cum += i
-    erturn sum
+    return cum
 
 
 ## Problem 7
 def myProduct(L):
-    prod = 0
+    prod = 1
     for i in L:
         prod = prod * i
+    return prod
 
 ## Problem 8
 def myMin(L): 
