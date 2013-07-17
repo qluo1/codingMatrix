@@ -61,11 +61,11 @@ L1 = [1,2,3,1] # <-- want len(L1) != len(list(set(L1)))
 L2 = ['a','b','c'] # <-- same len(L2) == len(list(set(L2))) but L2 != list(set(L2))
 
 ## Task 18
-odd_num_list_range = {x for x in range(20) if x%2 != 0}
+odd_num_list_range = {x for x in range(100) if x%2 != 0}
 
 ## Task 19
 L = ['A','B','C','D','E']
-range_and_zip = zip(range(len(L)),L)
+range_and_zip = list(zip(range(len(L)),L))
 
 ## Task 20
 list_sum_zip = [sum(i) for i in zip([10,25,40],[1,15,20])]
