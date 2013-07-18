@@ -2,7 +2,7 @@
 minutes_in_week = 7 * 24 * 60
 
 ## Task 2
-remainder_without_mod = 2304811 - 2304811/47 * 47
+remainder_without_mod = 2304811 - 2304811//47 * 47
 
 ## Task 3
 divisible_by_3 = (673 + 909) % 3 == 0
@@ -93,7 +93,8 @@ identity_dict = {k: k for k in D}
 base = 10
 digits = set(range(base))
 # representation_dict = {k:v for (k,v) in zip(range(base**3),[(x,y,z) for x in digits for y in digits for z in digits])}
-representation_dict = {x*base**0+y*base**1+z*base**2 : (x,y,z) for x in digits for y in digits for z in digits}
+# representation_dict = {x*base**0+y*base**1+z*base**2 : (x,y,z) for x in digits for y in digits for z in digits}
+representation_dict = {x*base**2+y*base**1+z*base**0 : (x,y,z) for x in digits for y in digits for z in digits}
 
 ## Task 26
 d = {0:1000.0, 1:1200.50, 2:990}
