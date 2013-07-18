@@ -13,7 +13,7 @@ y = 1/2
 statement_val = 2**(y+1/2) if x+10<0 else 2**(y-1/2)
 
 ## Task 5
-first_five_squares ={ int(x**(0.5)) for x in {1,2,3,4,5} }
+first_five_squares ={ x**0.5 for x in {1,2,3,4,5} }
 
 ## Task 6
 first_five_pows_two = { 2**x for x in {0,1,2,3,4} }
@@ -23,8 +23,8 @@ X1 = { 2, 3, 4 }
 Y1 = { 5, 6, 7 }
 
 ## Task 8: enter in the two new setsm five element
-X2 = { 0,1,2 }
-Y2 = { 3,3,5 }
+X2 = { 0,1,3 }
+Y2 = { 2,6,18}
 
 ## Task 9
 base = 10
