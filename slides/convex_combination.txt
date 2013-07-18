@@ -1,0 +1,32 @@
+https://class.coursera.org/matrix-001/forum/thread?thread_id=1379
+
+Eli· 6 days ago 
+Hi,
+I didn't really understand the convex combination part, can something please explain it to me, the wordier the better?
+I understand we have a line made up of points in the plane scaling a point p by scalars 0 to 1. Then we went to translate it up to some point. I don;t understand what follows.
+Thanks,
+Eli.
+5· flag
+
+Brett Bernstein· 6 days ago 
+I think there are a few ideas that should be understood to grasp this concept:
+We can think of points as vectors which can be added together and scaled. For simplicity I will use the phrase point instead of vector here.
+A combination of points is some way of combining the points to yield a new point. There are different types of combinations. I will 
+list a few types:
+
+- Linear Combination: Given points p,q and real numbers a,ß we yield the new point a·p+ß·q. An example would be 3(2,1)+2(1,0)=(8,3).
+
+- Convex Combination: Given points p,q and real numbers a,ß=0 with a+ß=1 we yield the new point a·p+ß·q. An example would be .3(2,1)+.7(1,0)=(1.3,.3).
+
+- Affine Combination: Given points p,q and real numbers a,ß with a+ß=1 we yield the new point a·p+ß·q. An example would be 3(2,1)+(-2)(1,0)=(4,3).
+
+These can be extended to more than one point.
+
+If we take the set of all possible convex combinations of two points, we get the line segment between them. For example,
+{a(2,1)+ß(1,0)|a,ß=0,a+ß=1}
+is the set of all points on the line segment between (2,1) and (1,0). To see why this is true, we can write ß=1-a and get
+a(2,1)+ß(1,0)=a(2,1)+(1-a)(1,0)=(1,0)+a((2,1)-(1,0)).
+If we take the set of all possible affine combinations of two points, we get the line through them.
+If we take the set of all linear combinations of two points, we the linear subspace spanned by the two points.
+
+14· flag
