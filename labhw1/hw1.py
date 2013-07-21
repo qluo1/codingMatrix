@@ -35,7 +35,30 @@ p3_vector_sum_2 = [v-u for(v,u) in zip([0,one,one],[one,one,one])]
 
 data = {'a':[one,one,one,0,0,0,0],
 		'b':[0,one,one,one,0,0,0],
-		'c': }
+		'c':[0,0,one,one,one,0,0],
+		'd':[0,0,0,one,one,one,0],
+		'e':[0,0,0,0,one,one,one],
+		'f':[0,0,0,0,0,one,one]
+}
+
+def cal_set(S):
+	assert(len(S) > 0)
+	assert(S.issubset(data.keys()))
+	return [sum(i) for i in zip(*[data[k] for k in S])]
+
+def cal_data_map(data):
+	L = data.keys()
+	ret =[]
+	loop = 0
+	for i in data.keys():
+		if len(L):
+			k = L.copy()
+			ret.append((set(L.copy()),cal_set(k.copy()))
+			L.pop()
+	return dict(ret)
+
+print cal_data_map(data)
+
 
 u_0010010 = {}
 u_0100010 = {}
@@ -45,27 +68,27 @@ u_0100010 = {}
 ## Problem 5
 # Use the same format as the previous problem
 
-v_0010010 = ...
-v_0100010 = ...
+v_0010010 = {}
+v_0100010 = {}
 
 
 
 ## Problem 6
-uv_a = ...
-uv_b = ...
-uv_c = ...
-uv_d = ...
+uv_a = {}
+uv_b = {}
+uv_c = {}
+uv_d = {}
 
 
 
 ## Problem 7
 # use 'one' instead of '1'
-x_gf2 = [...]
+x_gf2 = []
 
 
 
 ## Problem 8
-v1 = [...]
-v2 = [...]
-v3 = [...]
+v1 = []
+v2 = []
+v3 = []
 
