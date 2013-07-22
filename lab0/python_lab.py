@@ -12,8 +12,9 @@ x = -9
 y = 1/2
 statement_val = 2**(y+1/2) if x+10<0 else 2**(y-1/2)
 
+import math
 ## Task 5
-first_five_squares ={ x**0.5 for x in {1,2,3,4,5} }
+first_five_squares ={ math.sqrt(x) for x in {1,2,3,4,5} }
 
 ## Task 6
 first_five_pows_two = { 2**x for x in {0,1,2,3,4} }
@@ -83,7 +84,7 @@ k = 'Frodo'
 value_list_modified_2 = [i.get(k,'NOT PRESENT') for i in dlist] # <-- as you do here
 
 ## Task 23
-square_dict = {k: k**(0.5) for k in range(99)}
+square_dict = {k: math.sqrt(k) for k in range(99)}
 
 ## Task 24
 D = {'red','white','blue'}
