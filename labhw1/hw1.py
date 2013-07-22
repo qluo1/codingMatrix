@@ -88,7 +88,7 @@ uv_d = -1
 
 digits = {0,one}
 def dot_linear():
-	for i in [(x1,x2,x3,x4) for x1 in digits for x2 in digits for x3 in digits for x4 in digits]:
+	for i in [[x1,x2,x3,x4] for x1 in digits for x2 in digits for x3 in digits for x4 in digits]:
 		Found = True
 		for j in [(one,one,0,0),(one,0,one,0),(one,one,one,one)]:
 			# print i, j , sum([x*y for (x,y) in zip(i,j)])
@@ -96,10 +96,11 @@ def dot_linear():
 				Found = False
 				break
 		if Found: 
-			# print(i)
+			print(i)
 			return i
 
 	return []
+
 
 x_gf2 = dot_linear()
 
