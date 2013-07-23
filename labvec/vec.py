@@ -1,39 +1,39 @@
 def getitem(v,d):
     "Returns the value of entry d in v"
     assert d in v.D
-    return v[d] if v.get(d) else 0
+    return v.f.get(d,0)
 
 def setitem(v,d,val):
     "Set the element of v with label d to be val"
     assert d in v.D
     if val != 0:
-        v[d] = val
+        v.f[d] = val
 
 def equal(u,v):
     "Returns true iff u is equal to v"
-    assert u.D == v.D
-    for k in set(u.keys(),v.keys()):
-        if u.get(k,0) != v.get(k,0):
+    # assert u.D == v.D
+    for k in set(u.f.keys()+v.f.keys()):
+        if u.f.get(k,0) != v.f.get(k,0):
             return False
     return True
 
 def add(u,v):
     "Returns the sum of the two vectors"
-    assert u.D == v.D
-    return Vec(set(u.keys(),v.keys()), {k: v.get(k,0) + u.get(k,0)} for k in set(u.keys(),v.keys())}
+    # assert u.D == v.D
+    return Vec(set(u.f.keys()+v.f.keys()), {k: v.f.get(k,0) + u.f.get(k,0) for k in set(u.f.keys()+v.f.keys()) if v.f.get(k,0) + u.f.get(k,0) != 0})
 
 def dot(u,v):
     "Returns the dot product of the two vectors"
     assert u.D == v.D
-    return sum([v.get(k,0) * u.get(k,0) for k in u.keys()])
+    return sum([v.f.get(k,0) * u.f.get(k,0) for k in u.f.keys()])
 
 def scalar_mul(v, alpha):
     "Returns the scalar-vector product alpha times v"
-    return Vec(v.keys(), {k: alpha * v[k] for k in v.keys()}
+    return Vec(v.f.keys(), {k: alpha * v.f[k] for k in v.f.keys()})
 
 def neg(v):
     "Returns the negation of a vector"
-    return Vec(v.keys(),{k: -1 * v[k] for k in v.keys())
+    return Vec(v.f.keys(),{k: -1 * v[k] for k in v.f.keys()})
 
 ##### NO NEED TO MODIFY BELOW HERE #####
 class Vec:
