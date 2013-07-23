@@ -21,8 +21,7 @@ def equal(u,v):
 def add(u,v):
     "Returns the sum of the two vectors"
     assert u.D == v.D
-    keys = set(chain(u.f.keys(),v.f.keys()))  or set(chain(u.D))
-    return Vec(keys, {k: v.f.get(k,0) + u.f.get(k,0) for k in keys if not (v.f.get(k) == None and u.f.get(k) ==None) })
+    return Vec(u.D, {k: v.f.get(k,0) + u.f.get(k,0) for k in u.D if not (v.f.get(k)==None and u.f.get(k)==None) })
 
 def dot(u,v):
     "Returns the dot product of the two vectors"
@@ -32,11 +31,11 @@ def dot(u,v):
 
 def scalar_mul(v, alpha):
     "Returns the scalar-vector product alpha times v"
-    return Vec(v.f.keys(), {k: alpha * v.f[k] for k in v.f.keys()})
+    return Vec(v.D, {k: alpha * v.f[k] for k in v.f.keys()})
 
 def neg(v):
     "Returns the negation of a vector"
-    return Vec(v.f.keys(),{k: -1 * v[k] for k in v.f.keys()})
+    return Vec(v.D,{k: -1 * v[k] for k in v.f.keys()})
 
 ##### NO NEED TO MODIFY BELOW HERE #####
 class Vec:
