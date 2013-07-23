@@ -1,3 +1,5 @@
+from itertools import chain
+
 def getitem(v,d):
     "Returns the value of entry d in v"
     assert d in v.D
@@ -6,26 +8,27 @@ def getitem(v,d):
 def setitem(v,d,val):
     "Set the element of v with label d to be val"
     assert d in v.D
-    if val != 0:
-        v.f[d] = val
+    v.f[d] = val
 
 def equal(u,v):
     "Returns true iff u is equal to v"
     # assert u.D == v.D
-    for k in set(u.f.keys()+v.f.keys()):
+    for k in set(chain(u.f.keys(),v.f.keys())):
         if u.f.get(k,0) != v.f.get(k,0):
             return False
     return True
 
 def add(u,v):
     "Returns the sum of the two vectors"
-    # assert u.D == v.D
-    return Vec(set(u.f.keys()+v.f.keys()), {k: v.f.get(k,0) + u.f.get(k,0) for k in set(u.f.keys()+v.f.keys()) if v.f.get(k,0) + u.f.get(k,0) != 0})
+    assert u.D == v.D
+    keys = set(chain(u.f.keys(),v.f.keys()))  or set(chain(u.D))
+    return Vec(keys, {k: v.f.get(k,0) + u.f.get(k,0) for k in keys if not (v.f.get(k) == None and u.f.get(k) ==None) })
 
 def dot(u,v):
     "Returns the dot product of the two vectors"
     assert u.D == v.D
-    return sum([v.f.get(k,0) * u.f.get(k,0) for k in u.f.keys()])
+    keys = set(chain(u.f.keys(),v.f.keys()))
+    return sum([v.f.get(k,0) * u.f.get(k,0) for k in keys])
 
 def scalar_mul(v, alpha):
     "Returns the scalar-vector product alpha times v"
