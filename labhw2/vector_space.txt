@@ -1,0 +1,33 @@
+https://class.coursera.org/matrix-001/forum/thread?thread_id=1784
+
+Mike RavellaStaff· 8 days ago 
+Hi Esteban!
+
+Vector spaces are HARD to visualize.  Intuition really comes with time working with them.  However, we can try to get you to visualize them in low dimensions, and then you can apply that knowledge to higher dimensions.
+
+So we learned that a vector space is all linear combinations of a set of vectors.  
+
+So let's start with one vector, [1,0].  This vector will define our vector space.  So now imagine that vector on the plane.  It's just one arrow from the origin, pointing to (1,0).  
+
+Now imagine giving that one vector every coefficient over the reals.  So 1*[1,0], 2*[1,0], 1.5*[1,0], pi*[1,0], 0*[1,0], -e*[1,0] and plotting all of those vectors on the same plane.  I think Prof Klein may have plotted something similar to this in class.  It will give a line on the x-axis.  This is because every linear combination is every multiple of that single vector.  Since that vector was along the x-axis, every multiple of it will be along the x-axis, since scalar multiplication won't change the angle of the vector.  
+
+Now let's go up a dimension.  Our vectors will be {[1,0],[0,1]}.  Now we have two vectors.  The vector space will be all linear combinations of these two vectors.  For example, 1*[1,0] + 2*[0,1] = [1,2], 0*[1,0] + 0*[0,1] = [0,0], -2*[1,0]+3*[0,1] = [-2,3].  Now repeat this for every real number for each of the coefficients, and plot them all on the same plane.  If you do this, you will eventually fill up the entire plane.  Therefore this vector space is R^2.  
+
+Note that a vector space will always contain the origin, because you can always make a linear combination where every coefficient is zero.  Also, when we specify vector spaces with a generating set of vectors like I did here, I think that it becomes very clear how they are closed under addition and scalar multiplication.  However, it may be something that you just need to stare at for a little while for it to sink in.  
+
+For a last example, let's specify the starting set to be {[1,1], [2,2]}.  In this case, the vector space would look like the line y=x.  I'll leave it to you as an exercise to see if you can figure out why.  However, I'll be happy to explain why if you have questions or are still unclear.  
+
+Feel free to ask any questions regarding this or anything else.  Intuition is something hard to teach, and knowing the rules is more important than being able to visualize it.  If you don't have intuition and you want it, the best thing I can suggest is to just stare at it for a while.  Sometimes linear algebra concepts just take time to sink in.
+
+Mike
+
+
+
+Mike RavellaStaff· 7 days ago 
+The problem with not passing through the origin is that that means that the zero vector is not contained by the space.  In R^n, the origin is the zero vector.  So if the origin isn't represented, then the zero vector isn't represented.  This means that the linear combination of all 0 coefficients is not contained, and this linear combination is possible for any set of vectors.  Therefore if it's not contained, then the space doesn't contain all linear combinations.  And since we said that vector spaces are all linear combinations of a set of vectors, then this is clearly not a vector space.  I should have explained this better.
+
+Mike
+
+
+
+
