@@ -161,11 +161,13 @@ def find_average_record(sen_set, voting_dict):
 
 avg_demo = find_average_record(demo_sent_set,create_voting_dict())
 
-demo_avg_2 = {i: sum([a*b for (a,b) in zip(create_voting_dict()[i],avg_demo)]) for i in demo_sent_set}
-average_Democrat_record = max(demo_avg_2,key=demo_avg_2.get) # (give the vector)
+# (give the vector)
+average_Democrat_record = {i: sum([a*b for (a,b) in zip(create_voting_dict()[i],avg_demo)]) for i in demo_sent_set}
 
+most_average_Democrat_2 = max(demo_avg_2,key=demo_avg_2.get) 
 
 # Task 8
+from itertools import combinations
 
 def bitter_rivals(voting_dict):
     """
@@ -178,5 +180,6 @@ def bitter_rivals(voting_dict):
         >>> bitter_rivals(voting_dict)
         ('Fox-Epstein', 'Ravella')
     """
-    return ('...', '...')
+    combins = {i: sum([a*b for (a,b) in zip(voting_dict[i[0]],voting_dict[i[1]])]) for i in combinations(voting_dict,2)}
 
+    return min(combins,key=combins.get)
