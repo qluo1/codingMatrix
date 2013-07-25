@@ -2,8 +2,8 @@
 # Please fill out this stencil and submit using the provided submission script.
 
 from vec import Vec
-
-
+from itertools import product
+from GF2 import one
 
 ## Problem 1
 def vec_select(veclist, k): 
@@ -71,24 +71,23 @@ def GF2_span(D, L):
     >>> Vec(D, {x:one for x in D}) in GF2_span(D, L)
     True
     '''
-    pass
-
+    return [sum([a*v for (a,v) in zip(i,L)]) for i in product({0,one},repeat=len(L))] if len(L) !=0 else Vec(D,{})
 
 
 # ## Problem 4
 # # Answer with a boolean, please.
 
-# is_it_a_vector_space_1 = '...'
-# is_it_a_vector_space_2 = '...'
+is_it_a_vector_space_1 = true
+is_it_a_vector_space_2 = true
 
 
 
 # ## Problem 5
-# is_it_a_vector_space_3 = '...'
-# is_it_a_vector_space_4 = '...'
+is_it_a_vector_space_3 = false
+is_it_a_vector_space_4 = false
 
 
 # ## Problem 6
 
-# is_it_a_vector_space_5 = '...'
-# is_it_a_vector_space_6 = '...'
+is_it_a_vector_space_5 = false
+is_it_a_vector_space_6 = false
