@@ -1,0 +1,23 @@
+https://class.coursera.org/matrix-001/forum/thread?thread_id=1741
+
+Brett Bernstein· 8 days ago 
+The precise definition of linear dependence uses the concept of a linear dependence relationship. This is a lot of words to say the following: The vectors v1,…,vn are linearly dependent if there are scalars a1,…,an not all zero with
+a1v1+a2v2+?+anvn=0.
+That is, there is a non-trivial linear combination of the vectors that yields the zero vector. This definition extends to all vector spaces where the geometric definitions don't apply directly. Vectors are linearly independent if they aren't linearly dependent.
+3
+· flag
+
+    joan masdemont fontas· 8 days ago 
+    Yes Brett you are absolutely correct.
+    Your definition is the most rigorous. With your permission:
+    if some of the coeficients are not zero you can isolate some vector as a linear combination of the other.
+    Taking your expression:
+
+    a1v1+a2v2+.......+anvn=0
+
+    For instance, if the previous equation is acomplished with a1 and  a2 different from 0.
+    You can deduce that v1=-a2*v2/a1
+
+    That means that v1 is a linear combination of v2. The reverse is also true: v2 is a linear combination of v1
+
+    PS. Brett, as I physicist i'm also an enthusiastic of maths, and after revisiting your profile I upvoted you because I see that we are in the same boat.
