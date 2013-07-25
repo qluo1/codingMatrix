@@ -77,17 +77,17 @@ def GF2_span(D, L):
 # ## Problem 4
 # # Answer with a boolean, please.
 
-is_it_a_vector_space_1 = true
-is_it_a_vector_space_2 = true
+is_it_a_vector_space_1 = True
+is_it_a_vector_space_2 = True
 
 
 
 # ## Problem 5
-is_it_a_vector_space_3 = false
-is_it_a_vector_space_4 = false
+is_it_a_vector_space_3 = False
+is_it_a_vector_space_4 = False
 
 
 # ## Problem 6
 
-is_it_a_vector_space_5 = false
-is_it_a_vector_space_6 = false
+is_it_a_vector_space_5 = False
+is_it_a_vector_space_6 = False

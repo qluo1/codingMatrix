@@ -164,7 +164,7 @@ avg_demo = find_average_record(demo_sent_set,create_voting_dict())
 # (give the vector)
 average_Democrat_record = {i: sum([a*b for (a,b) in zip(create_voting_dict()[i],avg_demo)]) for i in demo_sent_set}
 
-most_average_Democrat_2 = max(demo_avg_2,key=demo_avg_2.get) 
+most_average_Democrat_2 = max(average_Democrat_record,key=average_Democrat_record.get) 
 
 # Task 8
 from itertools import combinations
