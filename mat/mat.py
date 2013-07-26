@@ -1,4 +1,5 @@
 from vec import Vec
+from itertools import chain
 
 def getitem(M, k):
     "Returns the value of entry k in M.  The value of k should be a pair."
@@ -14,20 +15,27 @@ def setitem(M, k, val):
 def add(A, B):
     "Returns the sum of A and B"
     assert A.D == B.D
-    pass
+    keys = chain(A.f.keys(),B.f.keys())
+    return Mat(A.D, {k: A[k] + B[k] for k in keys})
 
 def scalar_mul(M, alpha):
     "Returns the product of scalar alpha with M" 
-    pass
+    return Mat(M.D,{k: alpha * M[k] for k in M.f.keys()})
 
 def equal(A, B):
     "Returns true iff A is equal to B"
     assert A.D == B.D
-    pass
+    keys = chain(A.f.keys(),B.f.keys())
+    ret = True
+    for k in keys:
+        if A[k] != B[k]:
+            ret = False
+            break
+    return ret
 
 def transpose(M):
     "Returns the transpose of M"
-    pass
+    return Mat(M.D,{reverse(k): M[k] for k in M.f.keys() })
 
 def vector_matrix_mul(v, M):
     "Returns the product of vector v and matrix M"
