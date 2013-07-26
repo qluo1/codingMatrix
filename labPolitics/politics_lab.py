@@ -117,7 +117,7 @@ def least_similar(sen, voting_dict):
 
 ## Task 5
 
-most_like_chafee    = most_similar('Lincoln',create_voting_dict())
+most_like_chafee    = most_similar('Chafee',create_voting_dict())
 
 least_like_santorum = least_similar('Santorum',create_voting_dict())
 
@@ -159,12 +159,12 @@ def find_average_record(sen_set, voting_dict):
     """
     return [sum(i) * 1.0 /len(sen_set)  for i in zip(*[voting_dict[i] for i in sen_set])]
 
-avg_demo = find_average_record(demo_sent_set,create_voting_dict())
-
 # (give the vector)
-average_Democrat_record = {i: sum([a*b for (a,b) in zip(create_voting_dict()[i],avg_demo)]) for i in demo_sent_set}
+average_Democrat_record = find_average_record(demo_sent_set,create_voting_dict())
 
-most_average_Democrat_2 = max(average_Democrat_record,key=average_Democrat_record.get) 
+avg_demo = {i: sum([a*b for (a,b) in zip(create_voting_dict()[i],average_Democrat_record)]) for i in demo_sent_set}
+
+most_average_Democrat_2 = max(avg_demo,key=avg_demo.get) 
 
 # Task 8
 from itertools import combinations
