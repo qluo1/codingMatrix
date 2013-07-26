@@ -3,12 +3,13 @@ from vec import Vec
 def getitem(M, k):
     "Returns the value of entry k in M.  The value of k should be a pair."
     assert k[0] in M.D[0] and k[1] in M.D[1]
-    pass
+    return M.f.get(k,0)
 
 def setitem(M, k, val):
     "Sets the element of v with label k to be val.  The value of k should be a pair"
     assert k[0] in M.D[0] and k[1] in M.D[1]
-    pass
+    if val:
+        M.f[k] = val
 
 def add(A, B):
     "Returns the sum of A and B"
