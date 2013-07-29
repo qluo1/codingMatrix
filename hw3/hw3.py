@@ -17,12 +17,12 @@ vector_matrix_product_3 = (Mat(({0,1,2},{0,1,2}),{(0,0):1,(0,1):2,(0,2):3, (1,0)
 # Represent your solution as a list of rows.
 # For example, the identity matrix would be [[1,0],[0,1]].
 
-M_swap_two_vector = ...
+M_swap_two_vector = [[0,1],[1,0]]
 
 
 
 ## Problem 3
-three_by_three_matrix = ... # Represent with a list of rows lists.
+three_by_three_matrix = [[1,0,1],[0,1,0],[1,0,0]] # Represent with a list of rows lists.
 
 
 
