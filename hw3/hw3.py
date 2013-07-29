@@ -27,7 +27,7 @@ three_by_three_matrix = [[1,0,1],[0,1,0],[1,0,0]] # Represent with a list of row
 
 
 ## Problem 4
-multiplied_matrix = ... # Represent with a list of row lists.
+multiplied_matrix = [[2,0,0],[0,4,0],[0,0,3]] # Represent with a list of row lists.
 
 
 
