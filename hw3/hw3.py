@@ -8,10 +8,9 @@ from vec import Vec
 
 ## Problem 1
 # Please represent your solutions as lists.
-vector_matrix_product_1 = ...
-vector_matrix_product_2 = ...
-vector_matrix_product_3 = ... 
-
+vector_matrix_product_1 = (Mat(({0,1},{'a','b'}),{(0,'a'):1,(0,'b'):1,(1,'a'):1,(1,'b'):-1}) * Vec({'a','b'},{'a':0.5,'b':0.5})).tolist()
+vector_matrix_product_2 = (Mat(({0,1},{'a','b'}),{(1,'b'):1}) * Vec({'a','b'},{'a':1.2,'b':4.44})).tolist()
+vector_matrix_product_3 = (Mat(({0,1,2},{0,1,2}),{(0,0):1,(0,1):2,(0,2):3, (1,0):2,(1,1):3,(1,2):4,(2,0):3,(2,1):4,(2,2):5}) * Vec({0,1,2},{0:1,1:1,2:3})).tolist()
 
 
 ## Problem 2

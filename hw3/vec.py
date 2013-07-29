@@ -96,3 +96,6 @@ class Vec:
     def copy(self):
         "Don't make a new copy of the domain D"
         return Vec(self.D, self.f.copy())
+
+    def toList(self):
+        return [self[k] for k in self.D]
