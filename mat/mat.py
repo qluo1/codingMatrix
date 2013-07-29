@@ -35,7 +35,7 @@ def equal(A, B):
 
 def transpose(M):
     "Returns the transpose of M"
-    return Mat(M.D,{reverse(k): M[k] for k in M.f.keys() })
+    return Mat((M.D[1],M.D[0]),{(k[1],k[0]): M[k] for k in M.f.keys() })
 
 def vector_matrix_mul(v, M):
     "Returns the product of vector v and matrix M"
@@ -57,8 +57,11 @@ def matrix_vector_mul(M, v):
 def matrix_matrix_mul(A, B):
     "Returns the product of A and B"
     assert A.D[1] == B.D[0]
-    pass
+    a_row_vec = [(r,Vec(A.D[1],{c: A[r,c] for c in A.D[1]})) for r in A.D[0]]
 
+    b_col_vec = [(c,Vec(B.D[0],{r: B[r,c] for r in B.D[0]})) for c in B.D[1]]
+
+    return Mat((A.D[0],B.D[1]), { (r,c): a*b for (r,a) in a_row_vec for (c,b) in b_col_vec if a*b !=0 })
 
 ################################################################################
 
@@ -79,12 +82,19 @@ class Mat:
             return matrix_matrix_mul(self,other)
         elif Vec == type(other):
             return matrix_vector_mul(self,other)
+        # handle python2
+        elif isinstance(other,Mat):
+            return matrix_matrix_mul(self,other)
+        elif isinstance(other,Vec):
+            return matrix_vector_mul(self,other)
         else:
             return scalar_mul(self,other)
             #this will only be used if other is scalar (or not-supported). mat and vec both have __mul__ implemented
 
     def __rmul__(self, other):
         if Vec == type(other):
+            return vector_matrix_mul(other, self)
+        elif isinstance(other,Vec):
             return vector_matrix_mul(other, self)
         else:  # Assume scalar
             return scalar_mul(self, other)
