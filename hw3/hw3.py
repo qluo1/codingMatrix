@@ -35,33 +35,33 @@ multiplied_matrix = [[2,0,0],[0,4,0],[0,0,3]] # Represent with a list of row lis
 # Please enter a boolean representing if the multiplication is valid.
 # If it is not valid, please enter None for the dimensions.
 
-part_1_valid = None # True or False
+part_1_valid = False # True or False
 part_1_number_rows = None # Integer or None
 part_1_number_cols = None # Integer or None
 
-part_2_valid = None
+part_2_valid = False
 part_2_number_rows = None
 part_2_number_cols = None
 
-part_3_valid = None
-part_3_number_rows = None
-part_3_number_cols = None
+part_3_valid = True
+part_3_number_rows = 1
+part_3_number_cols = 2
 
-part_4_valid = None
-part_4_number_rows = None
-part_4_number_cols = None
+part_4_valid = True
+part_4_number_rows = 2
+part_4_number_cols = 1
 
-part_5_valid = None
+part_5_valid = False
 part_5_number_rows = None
 part_5_number_cols = None
 
-part_6_valid = None
-part_6_number_rows = None
-part_6_number_cols = None
+part_6_valid = True
+part_6_number_rows = 1
+part_6_number_cols = 1
 
-part_7_valid = None
-part_7_number_rows = None
-part_7_number_cols = None
+part_7_valid = True
+part_7_number_rows = 3
+part_7_number_cols = 3
 
 
 
@@ -69,12 +69,12 @@ part_7_number_cols = None
 ## Problem 6
 # Please represent your answer as a list of row lists.
 
-small_mat_mult_1 = None
-small_mat_mult_2 = None
-small_mat_mult_3 = None
-small_mat_mult_4 = None
-small_mat_mult_5 = None
-small_mat_mult_6 = None
+small_mat_mult_1 = [[8, 13], [8, 14]]
+small_mat_mult_2 = [[24, 11, 4], [1, 3, 0]]
+small_mat_mult_3 = [3, 13]
+small_mat_mult_4 = ...
+small_mat_mult_5 = ...
+small_mat_mult_6 = ...
 
 
 

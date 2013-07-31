@@ -137,3 +137,13 @@ class Mat:
     def __repr__(self):
         "evaluatable representation"
         return "Mat(" + str(self.D) +", " + str(self.f) + ")"
+
+    def to_row_list(self):
+        """ """
+        assert(self.D and self.f)
+
+        return [[self[r,c] for c in self.D[1]] for r in self.D[0]]
+    def to_col_list(self):
+        """ """
+        assert(self.D and self.f)
+        return [ [self[r,c] for r in self.D[0]] for c in self.D[1]]
