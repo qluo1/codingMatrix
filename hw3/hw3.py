@@ -72,24 +72,27 @@ part_7_number_cols = 3
 small_mat_mult_1 = [[8, 13], [8, 14]]
 small_mat_mult_2 = [[24, 11, 4], [1, 3, 0]]
 small_mat_mult_3 = [3, 13]
-small_mat_mult_4 = ...
-small_mat_mult_5 = ...
-small_mat_mult_6 = ...
+small_mat_mult_4 = 11
+small_mat_mult_5 =  [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
+small_mat_mult_6 = [[-2, 4], [1, 1], [1, -3]]
 
 
 
 ## Problem 7
 # Please represent your solution as a list of row lists.
+A = listlist2mat([[2,0,1,5],[1,-4,6,2],[3,0,-4,2],[3,4,0,-2]])
 
-part_1_AB = None
-part_1_BA = None
+B = listlist2mat([[0,1,0,0],[0,0,1,0],[0,0,0,1],[1,0,0,0]])
+part_1_AB = (A*B).to_row_list() #[[5, 2, 0, 1], [2, 1, -4, 6], [2, 3, 0, -4], [-2, 3, 4, 0]]
+part_1_BA = (B*A).to_row_list() #[[1, -4, 6, 2], [3, 0, -4, 2], [3, 4, 0, -2], [2, 0, 1, 5]]
 
-part_2_AB = None
-part_2_BA = None
+B = listlist2mat([[0,0,0,1],[0,0,1,0],[0,1,0,0],[1,0,0,0]])
+part_2_AB = (A*B).to_row_list()    #[[5, 1, 0, 2], [2, 6, -4, 1], [2, -4, 0, 3], [-2, 0, 4, 3]]
+part_2_BA = (B*A).to_row_list()    #[[3, 4, 0, -2], [3, 0, -4, 2], [1, -4, 6, 2], [2, 0, 1, 5]]
 
-part_3_AB = None
-part_3_BA = None
-
+B = listlist2mat([[0,0,0,1],[0,1,0,0],[1,0,0,0],[0,0,1,0]])
+part_3_AB = (A*B).to_row_list()#[[1, 0, 5, 2], [6, -4, 2, 1], [-4, 0, 2, 3], [0, 4, -2, 3]]
+part_3_BA = (B*A).to_row_list()
 
 
 ## Problem 8
