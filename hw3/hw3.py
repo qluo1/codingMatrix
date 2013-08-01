@@ -101,9 +101,9 @@ part_3_BA = (B*A).to_row_list()
 # Represent multiplication of the variables, make them one string.
 # For example, the sum of 'a' and 'b' would be 'a+b'.
 
-matrix_matrix_mult_1    = None
-matrix_matrix_mult_2_A2 = None
-matrix_matrix_mult_2_A3 = None
+matrix_matrix_mult_1    = [[1,'a+b'],[0,1]]
+matrix_matrix_mult_2_A2 = [[1, 2], [0, 1]]
+matrix_matrix_mult_2_A3 = [[1, 3], [0, 1]]
 
 # Use the string 'n' to represent variable the n in A^n.
 matrix_matrix_mult_2_An = None
