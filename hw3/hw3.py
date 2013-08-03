@@ -133,15 +133,15 @@ your_answer_f_BA = [[-4,-2,-1,1],[2,10,-4,6],[8,8,8,0],[-3,18,6,-15]]
 
 
 ## Problem 10
-column_row_vector_multiplication1 = Vec({0, 1}, {None})
+column_row_vector_multiplication1 = Vec({0, 1}, {0:13,1:20})
 
-column_row_vector_multiplication2 = Vec({0, 1, 2}, {None})
+column_row_vector_multiplication2 = Vec({0, 1, 2}, {0:24, 1:11, 2:4})
 
-column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {None})
+column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {0:4,1:8,2:11,3:3})
 
-column_row_vector_multiplication4 = Vec({0,1}, {None})
+column_row_vector_multiplication4 = Vec({0,1}, {0:30,1:16})
 
-column_row_vector_multiplication5 = Vec({0, 1, 2}, {None})
+column_row_vector_multiplication5 = Vec({0, 1, 2}, {0:-3,1:1,2:9})
 
 
 
