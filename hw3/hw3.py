@@ -113,24 +113,23 @@ matrix_matrix_mult_2_An = [[1,'n'],[0,1]]
 ## Problem 9
 # Please represent your answer as a list of row lists.
 
-your_answer_a_AB = None
-your_answer_a_BA = None
+your_answer_a_AB = [[0,0,2,0],[0,0,5,0],[0,0,4,0],[0,0,6,0]]
+your_answer_a_BA = [[0,0,0,0],[4,4,4,0],[0,0,0,0],[0,0,0,0]]
 
-your_answer_b_AB = None
-your_answer_b_BA = None
+your_answer_b_AB = [[0,2,-1,0],[0,5,3,0],[0,4,0,0],[0,6,-5,0]]
+your_answer_b_BA = [[0,0,0,0],[1,5,-2,3],[0,0,0,0],[4,4,4,0]]
 
-your_answer_c_AB = None
-your_answer_c_BA = None
+your_answer_c_AB = [[6,0,0,0],[6,0,0,0],[8,0,0,0],[5,0,0,0]]
+your_answer_c_BA = [[4,2,1,-1],[1,5,-2,3],[0,0,0,0],[0,0,0,0]]
 
-your_answer_d_AB = None
-your_answer_d_BA = None
+your_answer_d_AB = [[6,3,0,4],[0,4,0,1],[0,4,0,4],[0,-6,0,-1]]
+your_answer_d_BA = [[0,11,0,-2],[0,0,0,0],[0,0,0,0],[1,5,-2,3]]
 
-your_answer_e_AB = None
-your_answer_e_BA = None
+your_answer_e_AB = [[0,3,0,8],[0,-9,0,2],[0,0,0,8],[0,15,0,-2]]
+your_answer_e_BA = [[-2,12,4,-10],[0,0,0,0],[0,0,0,0],[-3,-15,6,-9]]
 
-your_answer_f_AB = None
-your_answer_f_BA = None
-
+your_answer_f_AB = [[-4,4,2,-3],[-1,10,-4,9],[-4,8,8,0],[1,12,4,-15]]
+your_answer_f_BA = [[-4,-2,-1,1],[2,10,-4,6],[8,8,8,0],[-3,18,6,-15]]
 
 
 ## Problem 10
