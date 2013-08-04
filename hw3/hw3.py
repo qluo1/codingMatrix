@@ -106,8 +106,7 @@ matrix_matrix_mult_2_A2 = [[1, 2], [0, 1]]
 matrix_matrix_mult_2_A3 = [[1, 3], [0, 1]]
 
 # Use the string 'n' to represent variable the n in A^n.
-matrix_matrix_mult_2_An = None
-
+matrix_matrix_mult_2_An = [[1, 'n'], [0, 1]]
 
 
 ## Problem 9
