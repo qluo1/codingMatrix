@@ -4,7 +4,8 @@
 from mat import Mat
 from vec import Vec
 
-
+from matutil import *
+from vecutil import *
 
 ## Problem 1
 # Please represent your solutions as lists.
@@ -102,46 +103,53 @@ part_3_BA = (B*A).to_row_list()
 # For example, the sum of 'a' and 'b' would be 'a+b'.
 
 matrix_matrix_mult_1    = [[1,'a+b'],[0,1]]
+<<<<<<< HEAD
 matrix_matrix_mult_2_A2 = [[1, 2], [0, 1]]
 matrix_matrix_mult_2_A3 = [[1, 3], [0, 1]]
 
 # Use the string 'n' to represent variable the n in A^n.
 matrix_matrix_mult_2_An = [[1, 'n'], [0, 1]]
+=======
+matrix_matrix_mult_2_A2 = [[1,2],[0,1]]
+matrix_matrix_mult_2_A3 = [[1,3],[0,1]]
+
+# Use the string 'n' to represent variable the n in A^n.
+matrix_matrix_mult_2_An = [[1,'n'],[0,1]]
+>>>>>>> d91dbc96cd500963ced16d9a510277a3c4112627
 
 
 ## Problem 9
 # Please represent your answer as a list of row lists.
 
-your_answer_a_AB = None
-your_answer_a_BA = None
+your_answer_a_AB = [[0,0,2,0],[0,0,5,0],[0,0,4,0],[0,0,6,0]]
+your_answer_a_BA = [[0,0,0,0],[4,4,4,0],[0,0,0,0],[0,0,0,0]]
 
-your_answer_b_AB = None
-your_answer_b_BA = None
+your_answer_b_AB = [[0,2,-1,0],[0,5,3,0],[0,4,0,0],[0,6,-5,0]]
+your_answer_b_BA = [[0,0,0,0],[1,5,-2,3],[0,0,0,0],[4,4,4,0]]
 
-your_answer_c_AB = None
-your_answer_c_BA = None
+your_answer_c_AB = [[6,0,0,0],[6,0,0,0],[8,0,0,0],[5,0,0,0]]
+your_answer_c_BA = [[4,2,1,-1],[4,2,1,-1],[0,0,0,0],[0,0,0,0]]
 
-your_answer_d_AB = None
-your_answer_d_BA = None
+your_answer_d_AB = [[0,3,0,4],[0,4,0,1],[0,4,0,4],[0,-6,0,-1]]
+your_answer_d_BA = [[0,11,0,-2],[0,0,0,0],[0,0,0,0],[1,5,-2,3]]
 
-your_answer_e_AB = None
-your_answer_e_BA = None
+your_answer_e_AB = [[0,3,0,8],[0,-9,0,2],[0,0,0,8],[0,15,0,-2]]
+your_answer_e_BA = [[-2,12,4,-10],[0,0,0,0],[0,0,0,0],[-3,-15,6,-9]]
 
-your_answer_f_AB = None
-your_answer_f_BA = None
-
+your_answer_f_AB = [[-4,4,2,-3],[-1,10,-4,9],[-4,8,8,0],[1,12,4,-15]]
+your_answer_f_BA = [[-4,-2,-1,1],[2,10,-4,6],[8,8,8,0],[-3,18,6,-15]]
 
 
 ## Problem 10
-column_row_vector_multiplication1 = Vec({0, 1}, {None})
+column_row_vector_multiplication1 = Vec({0, 1}, {0:13,1:20})
 
-column_row_vector_multiplication2 = Vec({0, 1, 2}, {None})
+column_row_vector_multiplication2 = Vec({0, 1, 2}, {0:24, 1:11, 2:4})
 
-column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {None})
+column_row_vector_multiplication3 = Vec({0, 1, 2, 3}, {0:4,1:8,2:11,3:3})
 
-column_row_vector_multiplication4 = Vec({0,1}, {None})
+column_row_vector_multiplication4 = Vec({0,1}, {0:30,1:16})
 
-column_row_vector_multiplication5 = Vec({0, 1, 2}, {None})
+column_row_vector_multiplication5 = Vec({0, 1, 2}, {0:-3,1:1,2:9})
 
 
 
