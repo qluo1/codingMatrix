@@ -196,15 +196,14 @@ def dot_prod_mat_mat_mult(A, B):
     return Mat({A.D[0],B.D[1]}, {(r,c): r*c for r in a_row for c in b_col})
 
 ## Problem 18
-solving_systems_x1 = None
-solving_systems_x2 = None
-solving_systems_y1 = None
-solving_systems_y2 = None
-solving_systems_m = Mat(({0, 1}, {0, 1}), {None})
-solving_systems_a = Mat(({0, 1}, {0, 1}), {None})
-solving_systems_a_times_m = Mat(({0, 1}, {0, 1}), {None})
-solving_systems_m_times_a = Mat(({0, 1}, {0, 1}), {None})
-
+solving_systems_x1 = -1/5.0 #-0.20000000000000004
+solving_systems_x2 = 2/5.0 #0.4
+solving_systems_y1 = 4/5.0
+solving_systems_y2 = -3/5.0
+solving_systems_m = Mat((set([0, 1]), set([0, 1])), {(0, 1): 0.8, (1, 0): 0.4, (0, 0): -0.2, (1, 1): -0.6})
+solving_systems_a = Mat((set([0, 1]), set([0, 1])), {(0, 1): 4, (1, 0): 2, (0, 0): 3, (1, 1): 1})
+solving_systems_a_times_m =  Mat((set([0, 1]), set([0, 1])), {(0, 1): 4.440892098500626e-16, (0, 0): 1.0, (1, 1): 1.0})
+solving_systems_m_times_a = Mat((set([0, 1]), set([0, 1])), {(1, 0): 2.220446049250313e-16, (0, 0): 1.0, (1, 1): 1.0})
 
 
 ## Problem 19
