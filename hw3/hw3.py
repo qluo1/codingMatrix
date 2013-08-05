@@ -177,23 +177,23 @@ def dot_product_vec_mat_mult(v, M):
 ## Problem 15
 def Mv_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
-    pass
-
+    b_col = mat2coldict(B)
+    return coldict2mat([A*b_col[k] for k in b_col])
 
 
 ## Problem 16
 def vM_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
-    pass
-
+    a_row = mat2rowdict(A)
+    return rowdict2mat([a_row[k] * B for k in a_row])
 
 
 ## Problem 17
 def dot_prod_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
-    pass
-
-
+    a_row = mat2rowdict(A)
+    b_col = mat2coldict(B)
+    return Mat({A.D[0],B.D[1]}, {(r,c): r*c for r in a_row for c in b_col})
 
 ## Problem 18
 solving_systems_x1 = None
