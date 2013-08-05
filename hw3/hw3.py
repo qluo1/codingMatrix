@@ -210,8 +210,8 @@ solving_systems_m_times_a = Mat(({0, 1}, {0, 1}), {None})
 ## Problem 19
 # Please write your solutions as booleans (True or False)
 
-are_inverses1 = None
-are_inverses2 = None
-are_inverses3 = None
-are_inverses4 = None
+are_inverses1 = True
+are_inverses2 = False
+are_inverses3 = False
+are_inverses4 = False
 
