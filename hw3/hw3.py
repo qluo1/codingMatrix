@@ -174,7 +174,7 @@ def dot_product_vec_mat_mult(v, M):
     return Vec(M.D[1], {k: v*coldic[k] for k in coldic})
 
 
-## Problem 15
+## Problem 15 ?
 def Mv_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
     b_col = mat2coldict(B)
@@ -188,12 +188,12 @@ def vM_mat_mat_mult(A, B):
     return rowdict2mat([a_row[k] * B for k in a_row])
 
 
-## Problem 17
+## Problem 17 ?
 def dot_prod_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
     a_row = mat2rowdict(A)
     b_col = mat2coldict(B)
-    return Mat({A.D[0],B.D[1]}, {(r,c): r*c for r in a_row for c in b_col})
+    return Mat((A.D[0],B.D[1]), {(r,c): r*c for r in a_row for c in b_col})
 
 ## Problem 18
 solving_systems_x1 = -1/5.0 #-0.20000000000000004
@@ -202,15 +202,15 @@ solving_systems_y1 = 4/5.0
 solving_systems_y2 = -3/5.0
 solving_systems_m = Mat((set([0, 1]), set([0, 1])), {(0, 1): 0.8, (1, 0): 0.4, (0, 0): -0.2, (1, 1): -0.6})
 solving_systems_a = Mat((set([0, 1]), set([0, 1])), {(0, 1): 4, (1, 0): 2, (0, 0): 3, (1, 1): 1})
-solving_systems_a_times_m =  Mat((set([0, 1]), set([0, 1])), {(0, 1): 4.440892098500626e-16, (0, 0): 1.0, (1, 1): 1.0})
-solving_systems_m_times_a = Mat((set([0, 1]), set([0, 1])), {(1, 0): 2.220446049250313e-16, (0, 0): 1.0, (1, 1): 1.0})
+solving_systems_a_times_m =  solving_systems_a * solving_systems_m
+solving_systems_m_times_a = solving_systems_m * solving_systems_a
 
 
 ## Problem 19
 # Please write your solutions as booleans (True or False)
 
 are_inverses1 = True
-are_inverses2 = False
+are_inverses2 = True
 are_inverses3 = False
 are_inverses4 = False
 
