@@ -184,14 +184,15 @@ def Mv_mat_mat_mult(A, B):
 def vM_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
     a_row = mat2rowdict(A)
-    return rowdict2mat([a_row[k] * B for k in a_row])
+    #return rowdict2mat([a_row[k] * B for k in a_row])
+    return rowdict2mat({k: a_row[k] * B for k in a_row})
 
 ## Problem 17 ?
 def dot_prod_mat_mat_mult(A, B):
     assert A.D[1] == B.D[0]
     a_row = mat2rowdict(A)
     b_col = mat2coldict(B)
-    return Mat((A.D[0],B.D[1]), {(r,c): r*c for r in a_row for c in b_col})
+    return Mat((A.D[0],B.D[1]), {(r,c):a_row[r]*b_col[c] for r in a_row for c in b_col})
 
 ## Problem 18
 solving_systems_x1 = -1/5.0 #-0.20000000000000004
