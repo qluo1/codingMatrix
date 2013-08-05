@@ -103,19 +103,11 @@ part_3_BA = (B*A).to_row_list()
 # For example, the sum of 'a' and 'b' would be 'a+b'.
 
 matrix_matrix_mult_1    = [[1,'a+b'],[0,1]]
-<<<<<<< HEAD
-matrix_matrix_mult_2_A2 = [[1, 2], [0, 1]]
-matrix_matrix_mult_2_A3 = [[1, 3], [0, 1]]
-
-# Use the string 'n' to represent variable the n in A^n.
-matrix_matrix_mult_2_An = [[1, 'n'], [0, 1]]
-=======
 matrix_matrix_mult_2_A2 = [[1,2],[0,1]]
 matrix_matrix_mult_2_A3 = [[1,3],[0,1]]
 
 # Use the string 'n' to represent variable the n in A^n.
 matrix_matrix_mult_2_An = [[1,'n'],[0,1]]
->>>>>>> d91dbc96cd500963ced16d9a510277a3c4112627
 
 
 ## Problem 9
@@ -156,29 +148,30 @@ column_row_vector_multiplication5 = Vec({0, 1, 2}, {0:-3,1:1,2:9})
 ## Problem 11
 def lin_comb_mat_vec_mult(M, v):
     assert(M.D[1] == v.D)
-    pass
-
+    coldic = mat2coldict(M)
+    return sum([v[k] * coldic[k] for k in coldic])
 
 
 ## Problem 12
 def lin_comb_vec_mat_mult(v, M):
     assert(v.D == M.D[0])
-    pass
+    rowdic = mat2rowdict(M)
+    return sum([v[k] * rowdic[k] for k in rowdic])
 
 
 
 ## Problem 13
 def dot_product_mat_vec_mult(M, v):
     assert(M.D[1] == v.D)
-    pass
-
+    rowdict = mat2rowdict(M)
+    return Vec(M.D[0],{k: rowdict[k] * v for k in rowdict})
 
 
 ## Problem 14
 def dot_product_vec_mat_mult(v, M):
     assert(v.D == M.D[0])
-    pass
-
+    coldic = mat2coldict(M)
+    return Vec(M.D[1], {k: v*coldic[k] for k in coldic})
 
 
 ## Problem 15
