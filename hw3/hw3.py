@@ -200,8 +200,8 @@ solving_systems_y1 = 4/5.0
 solving_systems_y2 = -3/5.0
 solving_systems_m = Mat((set([0, 1]), set([0, 1])), {(0, 1): 0.8, (1, 0): 0.4, (0, 0): -0.2, (1, 1): -0.6})
 solving_systems_a = Mat((set([0, 1]), set([0, 1])), {(0, 1): 4, (1, 0): 2, (0, 0): 3, (1, 1): 1})
-solving_systems_a_times_m =  solving_systems_a * solving_systems_m
-solving_systems_m_times_a = solving_systems_m * solving_systems_a
+solving_systems_a_times_m =  (solving_systems_a * solving_systems_m).to_row_list()
+solving_systems_m_times_a = (solving_systems_m * solving_systems_a).to_row_list()
 
 
 ## Problem 19
