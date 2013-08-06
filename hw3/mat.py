@@ -60,8 +60,8 @@ def matrix_matrix_mul(A, B):
     a_row_vec = [(r,Vec(A.D[1],{c: A[r,c] for c in A.D[1]})) for r in A.D[0]]
 
     b_col_vec = [(c,Vec(B.D[0],{r: B[r,c] for r in B.D[0]})) for c in B.D[1]]
-
     return Mat((A.D[0],B.D[1]), { (r,c): a*b for (r,a) in a_row_vec for (c,b) in b_col_vec if a*b !=0 })
+
 
 ################################################################################
 
