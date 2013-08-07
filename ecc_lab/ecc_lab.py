@@ -3,22 +3,23 @@ from mat import Mat
 from bitutil import noise
 from GF2 import one
 from matutil import *
+from vecutil import *
 
 ## Task 1 part 1
 """ Create an instance of Mat representing the generator matrix G. You can use
 the procedure listlist2mat in the matutil module (be sure to import first).
 Since we are working over GF (2), you should use the value one from the
 GF2 module to represent 1"""
-G = listlist2mat([[one,0,0,0],[0,one,0,0],[0,0,one,0],[0,0,0,one]])
+G = listlist2mat([[one,0,one,one],[one,one,0,one],[0,0,0,one],[one,one,one,0],[0,0,1,0],[0,1,0,0],[1,0,0,0]])
 
 ## Task 1 part 2
 # Please write your answer as a list. Use one from GF2 and 0 as the elements.
-encoding_1001 = 
+encoding_1001 = (G * list2vec([one,0,0,one])).tolist()
 
 
 ## Task 2
 # Express your answer as an instance of the Mat class.
-R = None
+R = listlist2mat([[0,0,0,0,0,0,one],[0,0,0,0,0,one,0],[0,0,0,0,one,0,0],[0,0,0,0,one,0,0]])
 
 ## Task 3
 # Create an instance of Mat representing the check matrix H.
@@ -42,9 +43,9 @@ def find_error(e):
 ## Task 4 part 2
 # Use the Vec class for your answers.
 non_codeword = Vec({0,1,2,3,4,5,6}, {0: one, 1:0, 2:one, 3:one, 4:0, 5:one, 6:one})
-error_vector = Vec(..., ...)
-code_word = Vec(..., ...)
-original = ... # code_word * R
+# error_vector = Vec(..., ...)
+# code_word = Vec(..., ...)
+# original = ... # code_word * R
 
 
 ## Task 5
@@ -60,7 +61,7 @@ def find_error_matrix(S):
     pass
 
 ## Task 6
-s = "I'm trying to free your mind, Neo. But I can only show you the door. You’re the one that has to walk through it."
+#s = "I'm trying to free your mind, Neo. But I can only show you the door. You’re the one that has to walk through it."
 P = None
 
 ## Task 7
