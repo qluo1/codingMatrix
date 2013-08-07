@@ -1,6 +1,6 @@
 from vec import Vec
 from mat import Mat
-from bitutil import noise
+from bitutil import *
 from GF2 import one
 from matutil import *
 from vecutil import *
@@ -47,7 +47,7 @@ def find_error(e):
     """
     h_v = mat2coldict(H)
     for k in h_v:
-        if h_v[v] == e:
+        if h_v[k] == e:
             return Vec(set(h_v.keys()),{k:one})
     
     return Vec(set(h_v.keys()),{})

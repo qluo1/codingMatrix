@@ -70,13 +70,13 @@ part_7_number_cols = 3
 ## Problem 6
 # Please represent your answer as a list of row lists.
 
-small_mat_mult_1 = [[8, 13], [8, 14]]
-small_mat_mult_2 = [[24, 11, 4], [1, 3, 0]]
-small_mat_mult_3 = [3, 13]
-small_mat_mult_4 = 11
-small_mat_mult_5 =  [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
-small_mat_mult_6 = [[-2, 4], [1, 1], [1, -3]]
+small_mat_mult_1 = (listlist2mat([[2,3],[4,2]]) * listlist2mat([[1,2],[2,3]])).to_row_list()# [[8, 13], [8, 14]]
 
+small_mat_mult_2 = (listlist2mat([[2,4,1],[3,0,-1]]) * listlist2mat([[1,2,0],[5,1,1],[2,3,0]])).to_row_list() #[[24, 11, 4], [1, 3, 0]]
+small_mat_mult_3 =  (listlist2mat([[2,2,1]]) * listlist2mat([[3,1],[-2,6],[1,-1]])).to_row_list() # [3, 13]
+small_mat_mult_4 =  (listlist2mat([[1,2,3]]) * listlist2mat([[1,2,3]]).transpose()).to_row_list()  #14
+small_mat_mult_5 =  (listlist2mat([[1,2,3]]).transpose() * listlist2mat([[1,2,3]])).to_row_list()  #[[1, 2, 3], [2, 4, 6], [3, 6, 9]]
+small_mat_mult_6 =   (listlist2mat([[4,1,-3],[2,2,-2]]).transpose() * listlist2mat([[-1,1],[1,0]])).to_row_list() #[[-2, 4], [1, 1], [1, -3]]
 
 
 ## Problem 7
@@ -102,12 +102,12 @@ part_3_BA = (B*A).to_row_list()
 # Represent multiplication of the variables, make them one string.
 # For example, the sum of 'a' and 'b' would be 'a+b'.
 
-matrix_matrix_mult_1    = [[1,'a+b'],[0,1]]
-matrix_matrix_mult_2_A2 = [[1,2],[0,1]]
-matrix_matrix_mult_2_A3 = [[1,3],[0,1]]
+matrix_matrix_mult_1    = [[1, 'a+b'],[0,1]]
+matrix_matrix_mult_2_A2 = [[1, 2],[0,1]]
+matrix_matrix_mult_2_A3 = [[1, 3],[0,1]]
 
 # Use the string 'n' to represent variable the n in A^n.
-matrix_matrix_mult_2_An = [[1,'n'],[0,1]]
+matrix_matrix_mult_2_An = [[1, 'n'],[0,1]]
 
 
 ## Problem 9
