@@ -26,8 +26,8 @@ encoding_1001 = (G* list2vec([one,0,0,one])).tolist()
 ## Task 2
 # Express your answer as an instance of the Mat class.
 # https://class.coursera.org/matrix-001/forum/thread?thread_id=2621
-R = listlist2mat([[0,0,0,0,0,0,one],[0,0,0,0,0,one,0],[0,0,0,0,one,0,0],[0,0,one,0,0,0,0]])
 
+R = listlist2mat([[0,0,0,0,0,0,one],[0,0,0,0,0,one,0],[0,0,0,0,one,0,0],[0,0,one,0,0,0,0]])
 ## Task 3
 # Create an instance of Mat representing the check matrix H.
 H = listlist2mat([[0,0,0,one,one,one,one],[0,one,one,0,0,one,one],[one,0,one,0,one,0,one]])
