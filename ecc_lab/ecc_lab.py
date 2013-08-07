@@ -25,11 +25,12 @@ encoding_1001 = (G* list2vec([one,0,0,one])).tolist()
 
 ## Task 2
 # Express your answer as an instance of the Mat class.
+# https://class.coursera.org/matrix-001/forum/thread?thread_id=2621
 R = listlist2mat([[0,0,0,0,0,0,one],[0,0,0,0,0,one,0],[0,0,0,0,one,0,0],[0,0,one,0,0,0,0]])
 
 ## Task 3
 # Create an instance of Mat representing the check matrix H.
-H = None
+H = listlist2mat([[0,0,0,one,one,one,one],[0,one,one,0,0,one,one],[one,0,one,0,one,0,one]])
 
 ## Task 4 part 1
 def find_error(e):
@@ -44,7 +45,12 @@ def find_error(e):
         >>> find_error(Vec({0,1,2}, {1:one, 2:one}))
         Vec({0, 1, 2, 3, 4, 5, 6},{2: one})    
     """
-    pass
+    h_v = mat2coldict(H)
+    for k in h_v:
+        if h_v[v] == e:
+            return Vec(set(h_v.keys()),{k:one})
+    
+    return Vec(set(h_v.keys()),{})
 
 ## Task 4 part 2
 # Use the Vec class for your answers.
