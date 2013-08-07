@@ -75,16 +75,16 @@ def find_error_matrix(S):
 
 ## Task 6
 s = "I'm trying to free your mind, Neo. But I can only show you the door. You’re the one that has to walk through it."
-P = None
+P = bits2mat(str2bits(s))
 
 ## Task 7
-C = None
-bits_before = None
-bits_after = None
+C = G * P
+bits_before = len(mat2bits(P)) #4088
+bits_after = len(mat2bits(C))  #7154
 
 
 ## Ungraded Task
-CTILDE = None
+CTILDE = C + noise(C,0.02)
 
 ## Task 8
 def correct(A):
