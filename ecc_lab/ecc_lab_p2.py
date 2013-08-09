@@ -69,8 +69,9 @@ def find_error_matrix(S):
         >>> find_error_matrix(S)
         Mat(({0, 1, 2, 3, 4, 5, 6}, {0, 1, 2, 3}), {(1, 2): 0, (3, 2): one, (0, 0): 0, (4, 3): one, (3, 0): 0, (6, 0): 0, (2, 1): 0, (6, 2): 0, (2, 3): 0, (5, 1): one, (4, 2): 0, (1, 0): 0, (0, 3): 0, (4, 0): 0, (0, 1): 0, (3, 3): 0, (4, 1): 0, (6, 1): 0, (3, 1): 0, (1, 1): 0, (6, 3): 0, (2, 0): 0, (5, 0): 0, (2, 2): 0, (1, 3): 0, (5, 3): 0, (5, 2): 0, (0, 2): 0})
     """
-    return listlist2mat([find_error(mat2coldict(S)[k]).tolist() for k in mat2coldict(S)]).transpose()
-
+    # return listlist2mat([find_error(mat2coldict(S)[k]).tolist() for k in mat2coldict(S)]).transpose()
+    return coldict2mat([find_error(mat2coldict(S)[k]) for k in mat2coldict(S)])
+    
 ## Task 6
 s = "I'm trying to free your mind, Neo. But I can only show you the door. You’re the one that has to walk through it."
 P = bits2mat(str2bits(s))
@@ -95,4 +96,6 @@ def correct(A):
         Mat(({0, 1, 2, 3, 4, 5, 6}, {1, 2, 3}), {(0, 1): 0, (1, 2): 0, (3, 2): 0, (1, 3): 0, (3, 3): 0, (5, 2): one, (6, 1): 0, (3, 1): 0, (2, 1): 0, (0, 2): one, (6, 3): one, (4, 2): 0, (6, 2): one, (2, 3): 0, (4, 3): 0, (2, 2): 0, (5, 1): 0, (0, 3): one, (4, 1): 0, (1, 1): 0, (5, 3): one})
     """
     # return = R * (A + find_error_matrix(H*A))
-    pass
+    a = mat2coldict(A)
+    b = mat2coldict(find_error_matrix(H*A))
+    return coldict2mat({k: a[k] + b[k] for k in a.keys()})
