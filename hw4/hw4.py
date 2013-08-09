@@ -15,9 +15,9 @@ from vec import Vec
 #
 # For example, [1, 3, 5] would mean 1*[2,0,4,0] + 3*[0,1,0,1] + 5*[0,0,-1,-1]
 
-rep_1 = [...]
-rep_2 = [...]
-rep_3 = [...]
+rep_1 = [1,1,0]
+rep_2 = [1/2,1,1]
+rep_3 = [0,1,-1]
 
 
 
@@ -25,11 +25,10 @@ rep_3 = [...]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-lin_comb_coefficients_1 = [...]
-lin_comb_coefficients_2 = [...]
-lin_comb_coefficients_3 = [...]
-lin_comb_coefficients_4 = [...]
-
+lin_comb_coefficients_1 = [3,-1,1]
+lin_comb_coefficients_2 = [-5/2,3/2,1]
+lin_comb_coefficients_3 = [1/2,-11/2,4]
+lin_comb_coefficients_4 = [1,-2,1]
 
 
 ## Problem 3
@@ -37,9 +36,9 @@ lin_comb_coefficients_4 = [...]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-gf2_rep_1 = [...]
-gf2_rep_2 = [...]
-gf2_rep_3 = [...]
+gf2_rep_1 = [1,0,1,0]
+gf2_rep_2 = [1,0,0,1]
+gf2_rep_3 = [1,1,0,1]
 
 
 

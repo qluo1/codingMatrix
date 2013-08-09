@@ -12,7 +12,7 @@ def identity(labels = {'x','y','u'}):
     identity().  Additionally, if you want {'r','g','b'}, or another set, to be the
     labels of your matrix, you can call identity({'r','g','b'}).  
     '''
-    pass
+    return Mat((labels,labels), {(a,a): 1 for a in labels})
 
 ## Task 2
 def translation(x,y):
@@ -20,7 +20,10 @@ def translation(x,y):
     Input:  An x and y value by which to translate an image.
     Output:  Corresponding 3x3 translation matrix.
     '''
-    pass
+    ret = identity()
+    ret[('x','u')] = x
+    ret[('y','u')] = y
+    return ret
 
 ## Task 3
 def scale(a, b):
@@ -28,7 +31,10 @@ def scale(a, b):
     Input:  Scaling parameters for the x and y direction.
     Output:  Corresponding 3x3 scaling matrix.
     '''
-    pass
+    ret = identity()
+    ret[('x','x')] = a
+    ret[('y','y')] = b
+    return ret
 
 ## Task 4
 def rotation(angle):
