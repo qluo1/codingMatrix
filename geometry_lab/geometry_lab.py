@@ -35,7 +35,7 @@ def scale(a, b):
     ret[('x','x')] = a
     ret[('y','y')] = b
     return ret
-
+import math
 ## Task 4
 def rotation(angle):
     '''
@@ -43,7 +43,11 @@ def rotation(angle):
     Output:  Corresponding 3x3 rotation matrix.
     Note that the math module is imported.
     '''
-    pass
+    ret = identity()
+    ret['x','x'] = ret['y','y'] = math.cos(angle)
+    ret['x','y'] = -math.sin(angle)
+    ret['y','x'] = math.sin(angle)
+    return ret
 
 ## Task 5
 def rotate_about(x,y,angle):
@@ -53,7 +57,7 @@ def rotate_about(x,y,angle):
     Output:  Corresponding 3x3 rotation matrix.
     It might be helpful to use procedures you already wrote.
     '''
-    pass
+    return  rotation(angle) * translation(x,y) 
 
 ## Task 6
 def reflect_y():
