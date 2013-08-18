@@ -274,5 +274,21 @@ def exchange(S, A, z):
         >>> exchange(S, A, z) == Vec({0, 1, 2, 3},{0: 0, 1: 0, 2: 1, 3: 0})
         True
     '''
-    pass
+    assert(len(A) < len(S))
+    T = copy.copy(A)
+    T.append(z)
+    assert(is_independent(T))
 
+    found = []
+    for i in [j for j in S if j not in A]:
+        T.append(i)
+        if not is_independent(T):
+            found.append(i)
+            T.pop()
+
+    return found[0]
+
+# S = [list2vec(v) for v in [[0,0,5,3],[2,0,1,3],[0,0,1,0],[1,2,3,4]]]
+# A = [list2vec(v) for v in [[0,0,5,3],[2,0,1,3]]]
+# z = list2vec([0,2,1,1])
+# print(exchange(S, A, z))
