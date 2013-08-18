@@ -6,7 +6,7 @@ from math import sqrt, pi
 from matutil import coldict2mat
 from solver import solve
 from vec import Vec
-
+from vecutil import *
 
 
 ## Problem 1
@@ -47,29 +47,28 @@ gf2_rep_3 = [1,1,0,1]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-gf2_lc_rep_1 = [...]
-gf2_lc_rep_2 = [...]
-gf2_lc_rep_3 = [...]
-gf2_lc_rep_4 = [...]
-
+gf2_lc_rep_1 = [0,0,0,0,1,1,0,0]
+gf2_lc_rep_2 = [0,0,0,0,0,0,1,1]
+gf2_lc_rep_3 = [0,0,1,0,0,1,0,0]
+gf2_lc_rep_4 = [0,0,0,1,0,1,0,0]
 
 
 ## Problem 5
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-lin_dep_R_1 = [...]
-lin_dep_R_2 = [...]
-lin_dep_R_3 = [...]
-
+lin_dep_R_1 = [2,1,1]
+lin_dep_R_2 = [-4,1,-4/7.0]
+lin_dep_R_3 = [-0.3,0,0,1,3]
 
 
 ## Problem 6
 # Please record your solution as a list of coefficients
+from math import sqrt
 
-linear_dep_R_1 = [...]
-linear_dep_R_2 = [...]
-linear_dep_R_3 = [...]
+linear_dep_R_1 = [-1,1,-3]
+linear_dep_R_2 = [2*sqrt(2), sqrt(2)/pi, 1]
+linear_dep_R_3 = [1,1,1,1,1]
 
 
 
@@ -78,57 +77,54 @@ linear_dep_R_3 = [...]
 # Assign sum_to to the vector that you are expressing as a linear combination
 # of the other two.  Write the name of the vector as a STRING.  i.e. 'u' or 'w'
 
-u = ...
-v = ...
-w = ...
-sum_to = ...
-
+u = 1
+v = -1
+w = 1
+sum_to = ['u', 'v','w']
 
 
 ## Problem 8
 # Please use the Vec class to represent your vectors
 
-indep_vec_1 = Vec({...}, {...})
-indep_vec_2 = Vec({...}, {...})
-indep_vec_3 = Vec({...}, {...})
-indep_vec_4 = Vec({...}, {...})
-
+indep_vec_1 = Vec({0,1,2}, {0:1})
+indep_vec_2 = Vec({0,1,2}, {1:1})
+indep_vec_3 = Vec({0,1,2}, {2:1})
+indep_vec_4 = Vec({0,1,2}, {0:1,1:1,2:1})
 
 
 ## Problem 9
 # Please give your solution as a list of coefficients of the linear combination
 
-zero_comb_1 = [...]
-zero_comb_2 = [...]
-zero_comb_3 = [...]
-
+zero_comb_1 = [1,1,0,1]
+zero_comb_2 = [0,1,1,1]
+zero_comb_3 = [1,1,0,1]
 
 
 ## Problem 10
 # Please give your solution as a list of coefficients of the vectors
 # in the set in order (list the coefficient for v_i before v_j if i < j).
 
-sum_to_zero_1 = [...]
-sum_to_zero_2 = [...]
-sum_to_zero_3 = [...]
-sum_to_zero_4 = [...]
+sum_to_zero_1 = [0,1,0,1,1]
+sum_to_zero_2 = [0,1,0,1,1,0,0]
+sum_to_zero_3 = [1,0,1,1,1]
+sum_to_zero_4 = [1,1,1,1,1,0,0]
 
 
 
 ## Problem 11
 ## Please express your answer a list of ints, such as [1,0,0,0,0]
 
-exchange_1 = [...]
-exchange_2 = [...]
-exchange_3 = [...]
+exchange_1 = [0,0,0,1,0]
+exchange_2 = [0,0,0,1,0]
+exchange_3 = [0,0,0,0,1]
 
 
 ## Problem 12
 # Please give the name of the vector you want to replace as a string (e.g. 'v1')
 
-replace_1 = ...
-replace_2 = ...
-replace_3 = ...
+replace_1 = 'v3'
+replace_2 = 'v1'
+replace_3 = 'v4'
 
 
 
@@ -147,9 +143,7 @@ def rep2vec(u, veclist):
         >>> rep2vec(Vec({0,1,2}, {0:2, 1:4, 2:6}), [a0,a1,a2]) == Vec({'a', 'c', 'b', 'd'},{'a': 2, 'c': 6, 'b': 4, 'd': 0})
         True
     '''
-    pass
-
-
+    return coldict2mat(veclist) * u
 
 ## Problem 14
 def vec2rep(veclist, v):
@@ -167,8 +161,7 @@ def vec2rep(veclist, v):
         >>> vec2rep([a0,a1,a2], Vec({'a','b','c','d'}, {'a':3, 'c':-2})) == Vec({0, 1, 2},{0: 3.0, 1: 0.0, 2: -2.0})
         True
     '''
-    pass
-
+    return solve(coldict2mat(veclist),v)
 
 
 ## Problem 15
@@ -187,7 +180,7 @@ def is_superfluous(L, i):
         >>> a1 = Vec({'a','b','c','d'}, {'b':1})
         >>> a2 = Vec({'a','b','c','d'}, {'c':1})
         >>> a3 = Vec({'a','b','c','d'}, {'a':1,'c':3})
-        >>> is_superfluous(L, 3)
+        >>> is_superfluous([a0,a1,a2,a3], 3)
         True
         >>> is_superfluous([a0,a1,a2,a3], 3)
         True
@@ -196,8 +189,17 @@ def is_superfluous(L, i):
         >>> is_superfluous([a0,a1,a2,a3], 1)
         False
     '''
-    pass
+    assert(len(L) > 0)
+    assert(i < len(L))
 
+    if len(L) == 1:
+        return True
+
+    mtx = coldict2mat([ L[j] for j in range(len(L)) if j != i ])
+    u = solve(mtx,L[i])
+
+    residual = mtx * u - L[i]
+    return residual * residual < 10e-14
 
 
 ## Problem 16
@@ -223,9 +225,12 @@ def is_independent(L):
     >>> is_independent(vlist[5:])
     True
     '''
-    pass
+    #
+    if len(L) == 1:
+        return True
+    return len([i for i in range(len(L)) if is_superfluous(L,i)]) == 0
 
-
+import copy
 
 ## Problem 17
 def superset_basis(S, L):
@@ -245,8 +250,13 @@ def superset_basis(S, L):
         >>> superset_basis([a0, a3], [a0, a1, a2]) == [Vec({'a', 'c', 'b', 'd'},{'a': 1}), Vec({'a', 'c', 'b', 'd'},{'b':1}),Vec({'a', 'c', 'b', 'd'},{'c': 1})]
         True
     '''
-    pass
+    T = copy.copy(S)
+    for i in L:
+        T.append(i)
+        if not is_independent(T):
+            T.pop()
 
+    return T
 
 
 ## Problem 18
