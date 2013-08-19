@@ -78,9 +78,9 @@ linear_dep_R_3 = [1,1,1,1,1]
 # of the other two.  Write the name of the vector as a STRING.  i.e. 'u' or 'w'
 
 u = 1
-v = -1
-w = 1
-sum_to = ['u', 'v','w']
+v = 1
+w = -1
+sum_to = ['u']
 
 
 ## Problem 8

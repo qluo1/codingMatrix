@@ -50,6 +50,11 @@ def rotation(angle):
     return ret
 
 ## Task 5
+# https://class.coursera.org/matrix-001/forum/thread?thread_id=3543
+# Our rotation matrix rotates points only about the origin.
+# That means we can't use it directly to answer the question in Task 5.
+# But we can overcome this "difficulty" by translating the point to the origin (by multiplying) first! This allows us to rotate the point using our rotation matrix. And finally translate that image back.
+
 def rotate_about(x,y,angle):
     '''
     Input:  An x and y coordinate to rotate about, and an angle
@@ -57,7 +62,7 @@ def rotate_about(x,y,angle):
     Output:  Corresponding 3x3 rotation matrix.
     It might be helpful to use procedures you already wrote.
     '''
-    return  rotation(angle) * translation(x,y) 
+    return  translation(x,y) * rotation(angle) *  translation(-x,-y) 
 
 ## Task 6
 def reflect_y():
@@ -65,7 +70,9 @@ def reflect_y():
     Input:  None.
     Output:  3x3 Y-reflection matrix.
     '''
-    pass
+    ret = identity()
+    ret['x','x'] = -1
+    return ret
 
 ## Task 7
 def reflect_x():
@@ -73,7 +80,9 @@ def reflect_x():
     Inpute:  None.
     Output:  3x3 X-reflection matrix.
     '''
-    pass
+    ret = identity()
+    ret['y','y'] = -1
+    return ret
     
 ## Task 8    
 def scale_color(scale_r,scale_g,scale_b):
@@ -81,7 +90,11 @@ def scale_color(scale_r,scale_g,scale_b):
     Input:  3 scaling parameters for the colors of the image.
     Output:  Corresponding 3x3 color scaling matrix.
     '''
-    pass
+    ret = identity({'r','g','b'})
+    ret['r','r'] = scale_r
+    ret['b','b'] = scale_b
+    ret['g','g'] = scale_g
+    return ret
 
 ## Task 9
 def grayscale():
@@ -89,7 +102,17 @@ def grayscale():
     Input: None
     Output: 3x3 greyscale matrix.
     '''
-    pass   
+    ret = identity({'r','g','b'})
+    ret['r','r'] = 77/256
+    ret['g','r'] = 77/256
+    ret['b','r'] = 77/256
+    ret['r','g'] = 151/256
+    ret['g','g'] = 151/256
+    ret['b','g'] = 151/256
+    ret['r','b'] = 28/256
+    ret['g','b'] = 28/256
+    ret['b','b'] = 28/256
+    return ret
 
 ## Task 10
 def reflect_about(p1,p2):
