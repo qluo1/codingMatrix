@@ -26,8 +26,8 @@ rep_3 = [0,1,-1]
 # the generators of V.
 
 lin_comb_coefficients_1 = [3,-1,1]
-lin_comb_coefficients_2 = [-5/2,3/2,1]
-lin_comb_coefficients_3 = [1/2,-11/2,4]
+lin_comb_coefficients_2 = [0.5,-3/2.0,1]
+lin_comb_coefficients_3 = [1/2.0,-11/2.0,4]
 lin_comb_coefficients_4 = [1,-2,1]
 
 
@@ -36,9 +36,9 @@ lin_comb_coefficients_4 = [1,-2,1]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-gf2_rep_1 = [1,0,1,0]
-gf2_rep_2 = [1,0,0,1]
-gf2_rep_3 = [1,1,0,1]
+gf2_rep_1 = [one,0,one,0]
+gf2_rep_2 = [one,0,0,one]
+gf2_rep_3 = [one,one,0,one]
 
 
 
@@ -57,7 +57,7 @@ gf2_lc_rep_4 = [0,0,0,1,0,1,0,0]
 # For each part, please provide your solution as a list of the coefficients for
 # the generators of V.
 
-lin_dep_R_1 = [2,1,1]
+lin_dep_R_1 = [-2,1,1]
 lin_dep_R_2 = [-4,1,-4/7.0]
 lin_dep_R_3 = [-0.3,0,0,1,3]
 
@@ -95,9 +95,9 @@ indep_vec_4 = Vec({0,1,2}, {0:1,1:1,2:1})
 ## Problem 9
 # Please give your solution as a list of coefficients of the linear combination
 
-zero_comb_1 = [1,1,0,1]
-zero_comb_2 = [0,1,1,1]
-zero_comb_3 = [1,1,0,1]
+zero_comb_1 = [one,one,0,one]
+zero_comb_2 = [0,one,one,one]
+zero_comb_3 = [one,one,0,0,one]
 
 
 ## Problem 10
@@ -114,9 +114,9 @@ sum_to_zero_4 = [1,1,1,1,1,0,0]
 ## Problem 11
 ## Please express your answer a list of ints, such as [1,0,0,0,0]
 
-exchange_1 = [0,0,0,1,0]
+exchange_1 = [0,0,0,0,1]
 exchange_2 = [0,0,0,1,0]
-exchange_3 = [0,0,0,0,1]
+exchange_3 = [0,0,1,0,0]
 
 
 ## Problem 12
