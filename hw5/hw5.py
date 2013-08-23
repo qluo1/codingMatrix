@@ -23,9 +23,9 @@ v2 = list2vec([0,3,3])
 # with appropriate lists of 3 vectors
 
 exchange_S0 = [w0, w1, w2]
-exchange_S1 = [...]
-exchange_S2 = [...]
-exchange_S3 = [v0, v1, v2]
+exchange_S1 = [v0,w1,w2]
+exchange_S2 = [v0,v2,w2]
+exchange_S3 = [v0,v1,v2]
 
 
 
@@ -39,10 +39,9 @@ v1 = list2vec([one,0,0])
 v2 = list2vec([one,one,0])
 
 exchange_2_S0 = [w0, w1, w2]
-exchange_2_S1 = [...]
-exchange_2_S2 = [...]
-exchange_2_S3 = [v0, v1, v2]
-
+exchange_2_S1 = [v1,w0,w1]
+exchange_2_S2 = [v1,v0,w0]
+exchange_2_S3 = [v0,v1,v2]
 
 
 ## Problem 3
@@ -68,17 +67,17 @@ def morph(S, B):
 ## Problem 4
 # Please express each solution as a list of vectors (Vec instances)
 
-row_space_1 = [...]
-col_space_1 = [...]
+row_space_1 = [None]
+col_space_1 = [None]
 
-row_space_2 = [...]
-col_space_2 = [...]
+row_space_2 = [None]
+col_space_2 = [None]
 
-row_space_3 = [...]
-col_space_3 = [...]
+row_space_3 = [None]
+col_space_3 = [None]
 
-row_space_4 = [...]
-col_space_4 = [...]
+row_space_4 = [None]
+col_space_4 = [None]
 
 
 
@@ -140,9 +139,9 @@ def my_rank(L):
 ## Problem 8
 # Please give each answer as a boolean
 
-only_share_the_zero_vector_1 = ...
-only_share_the_zero_vector_2 = ...
-only_share_the_zero_vector_3 = ...
+only_share_the_zero_vector_1 = None
+only_share_the_zero_vector_2 = None
+only_share_the_zero_vector_3 = None
 
 
 
