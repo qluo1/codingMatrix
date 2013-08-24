@@ -8,7 +8,7 @@ from mat import Mat
 from GF2 import one
 from vec import Vec
 
-
+from hw4 import is_independent,is_superfluous,vec2rep,rep2vec,exchange
 
 ## Problem 1
 w0 = list2vec([1,0,0])
@@ -43,6 +43,25 @@ exchange_2_S1 = [v1,w0,w1]
 exchange_2_S2 = [v1,v0,w0]
 exchange_2_S3 = [v0,v1,v2]
 
+import copy
+
+def swap(S,A,v):
+    """ 
+        S - list of vector
+        A - protected set 
+        v - inject vec
+        out: (T,w)
+    """
+    for i in range(len(S)):
+        T = copy.copy(S)
+        o,T[i] = T[i],v
+        u = vec2rep(T,o)
+        e = coldict2mat(T) * u - o
+        if e *e < 10e-14:
+            if o in A:
+                continue
+            return (T,o)
+    return []
 
 ## Problem 3
 def morph(S, B):
@@ -60,25 +79,31 @@ def morph(S, B):
         [(Vec({0, 1, 2},{0: 1, 1: 1, 2: 0}), Vec({0, 1, 2},{0: 1, 1: 0, 2: 0})), (Vec({0, 1, 2},{0: 0, 1: 1, 2: 1}), Vec({0, 1, 2},{0: 0, 1: 1, 2: 0})), (Vec({0, 1, 2},{0: 1, 1: 0, 2: 1}), Vec({0, 1, 2},{0: 0, 1: 0, 2: 1}))]
 
     '''
-    pass
-
-
+    T = copy.copy(S)
+    ret = []
+    A = []
+    for b in B:
+        T,o = swap(T,A,b)
+        A.append(b)
+        A.append(o)
+        # print("b:%s, o:%s, T:%s" % (b,o,A))
+        ret.append([b,o])
+    return ret
 
 ## Problem 4
 # Please express each solution as a list of vectors (Vec instances)
 
-row_space_1 = [None]
-col_space_1 = [None]
+row_space_1 = [list2vec([1,2,0]),list2vec([0,2,1])]
+col_space_1 = [list2vec([0,1]),list2vec([1,0])]
 
-row_space_2 = [None]
-col_space_2 = [None]
+row_space_2 = [list2vec([1,4,0,0]),list2vec([0,2,2,0]),list2vec([0,0,1,1])]
+col_space_2 = [list2vec([1,0,0]),list2vec([0,2,1]),list2vec([0,0,1])]
 
-row_space_3 = [None]
-col_space_3 = [None]
+row_space_3 = [list2vec([1])]
+col_space_3 = [list2vec([1,2,3])]
 
-row_space_4 = [None]
-col_space_4 = [None]
-
+row_space_4 = [list2vec([1,0]),list2vec([0,1])]
+col_space_4 = [list2vec([1,2,3]),list2vec([0,1,4])]
 
 
 ## Problem 5

@@ -274,20 +274,35 @@ def exchange(S, A, z):
         >>> exchange(S, A, z) == Vec({0, 1, 2, 3},{0: 0, 1: 0, 2: 1, 3: 0})
         True
     '''
-    assert(len(A) < len(S))
-    T = copy.copy(A)
-    T.append(z)
-    assert(is_independent(T))
+    # assert(len(A) < len(S))
+    # T = copy.copy(A)
+    # T.append(z)
+    # assert(is_independent(T))
 
-    found = []
-    for i in [j for j in S if j not in A]:
-        T.append(i)
-        if not is_independent(T):
-            found.append(i)
-            T.pop()
+    # found = []
+    # for i in [j for j in S if j not in A]:
+    #     T.append(i)
+    #     if not is_independent(T):
+    #         found.append(i)
+    #         T.pop()
 
-    return found[0]
+    # return found[0]
 
+    """ 
+        S - list of vector
+        A - protected set 
+        v - inject vec
+        out: (T,w)
+    """
+    for i in range(len(S)):
+        T = copy.copy(S)
+        o,T[i] = T[i],v
+        u = vec2rep(T,o)
+        e = coldict2mat(T) * u - o
+        if e *e < 10e-14:
+            if o not in A:
+                return o
+    return []
 # S = [list2vec(v) for v in [[0,0,5,3],[2,0,1,3],[0,0,1,0],[1,2,3,4]]]
 # A = [list2vec(v) for v in [[0,0,5,3],[2,0,1,3]]]
 # z = list2vec([0,2,1,1])
