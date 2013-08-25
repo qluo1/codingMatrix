@@ -8,7 +8,8 @@ from mat import Mat
 from GF2 import one
 from vec import Vec
 
-from hw4 import is_independent,is_superfluous,vec2rep,rep2vec,exchange
+from hw4 import is_superfluous,vec2rep,rep2vec
+from independence import rank, is_independent
 
 ## Problem 1
 w0 = list2vec([1,0,0])
@@ -128,7 +129,9 @@ def my_is_independent(L):
     >>> my_is_independent(L[2:5])
     False
     '''
-    pass
+    if rank(L) == len(L):
+        return True
+    return False
 
 
 ## Problem 6
@@ -145,9 +148,12 @@ def subset_basis(T):
     >>> subset_basis([a0,a1,a2,a3]) == [Vec({'c', 'b', 'a', 'd'},{'a': 1}), Vec({'c', 'b', 'a', 'd'},{'b': 1}), Vec({'c', 'b', 'a', 'd'},{'c': 1})]
     True
     '''
-    pass
-
-
+    ret = []
+    for i in T:
+        ret.append(i)
+        if not is_independent(ret):
+            ret.pop()
+    return ret
 
 ## Problem 7
 def my_rank(L): 
@@ -158,15 +164,15 @@ def my_rank(L):
     >>> my_rank([list2vec(v) for v in [[1,2,3],[4,5,6],[1.1,1.1,1.1]]])
     2
     '''
-    pass
+    return len(subset_basis(L))
 
 
 ## Problem 8
 # Please give each answer as a boolean
 
-only_share_the_zero_vector_1 = None
-only_share_the_zero_vector_2 = None
-only_share_the_zero_vector_3 = None
+only_share_the_zero_vector_1 = True
+only_share_the_zero_vector_2 = True
+only_share_the_zero_vector_3 = True
 
 
 
@@ -185,9 +191,9 @@ def direct_sum_decompose(U_basis, V_basis, w):
     >>> direct_sum_decompose(U_basis, V_basis, w) == (Vec({0, 1, 2, 3, 4, 5},{0: 2.0, 1: 4.999999999999972, 2: 0.0, 3: 0.0, 4: 1.0, 5: 0.0}), Vec({0, 1, 2, 3, 4, 5},{0: 0.0, 1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0}))
     True
     '''
-    pass
+    w_rep = vec2rep(U_basis + V_basis, w)
 
-
+    return (vec2rep(U_basis,w),vec2rep(V_basis,w))
 
 ## Problem 10
 def is_invertible(M): 
