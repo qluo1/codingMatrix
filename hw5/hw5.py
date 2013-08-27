@@ -205,7 +205,7 @@ def is_invertible(M):
     >>> is_invertible(M)
     True
     '''
-    return mat2rowdict(M) == mat2coldict(M)
+    return my_rank(mat2rowdict(M)) == my_rank(mat2coldict(M))
 
 
 ## Problem 11
