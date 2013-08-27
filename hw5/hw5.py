@@ -205,7 +205,7 @@ def is_invertible(M):
     >>> is_invertible(M)
     True
     '''
-    return my_rank(mat2rowdict(M)) == my_rank(mat2coldict(M))
+    return my_rank(mat2rowdict(M).values()) == my_rank(mat2coldict(M).values())
 
 
 ## Problem 11
@@ -218,13 +218,13 @@ def find_matrix_inverse(A):
     >>> find_matrix_inverse(M) == Mat(({0, 1, 2}, {0, 1, 2}), {(0, 1): one, (2, 0): 0, (0, 0): 0, (2, 2): one, (1, 0): one, (1, 2): 0, (1, 1): 0, (2, 1): 0, (0, 2): 0})
     True
     '''
-    I = identity(A.D[0])
-    col = []
-    for i in mat2coldict(I):
-        b = solve(A,i)
-        e = A * b - i
+    I = identity(A.D[0],one)
+    col = {}
+    for k,v in mat2coldict(I).items():
+        b = solve(A,v)
+        e = A * b - v
         assert e*e < 10e-14
-        col.append(b)
+        col[k]= b
 
     B = coldict2mat(col)
     assert B.D[0] == A.D[1]
