@@ -3,7 +3,7 @@
 
 from vecutil import list2vec
 from solver import solve
-from matutil import listlist2mat, coldict2mat
+from matutil import *
 from mat import Mat
 from GF2 import one
 from vec import Vec
@@ -205,7 +205,7 @@ def is_invertible(M):
     >>> is_invertible(M)
     True
     '''
-    pass
+    return mat2rowdict(M) == mat2coldict(M)
 
 
 ## Problem 11
@@ -218,9 +218,18 @@ def find_matrix_inverse(A):
     >>> find_matrix_inverse(M) == Mat(({0, 1, 2}, {0, 1, 2}), {(0, 1): one, (2, 0): 0, (0, 0): 0, (2, 2): one, (1, 0): one, (1, 2): 0, (1, 1): 0, (2, 1): 0, (0, 2): 0})
     True
     '''
-    pass
+    I = identity(A.D[0])
+    col = []
+    for i in mat2coldict(I):
+        b = solve(A,i)
+        e = A * b - i
+        assert e*e < 10e-14
+        col.append(b)
 
-
+    B = coldict2mat(col)
+    assert B.D[0] == A.D[1]
+    assert B.D[1] == A.D[0]
+    return B
 
 ## Problem 12
 def find_triangular_matrix_inverse(A): 
@@ -231,4 +240,5 @@ def find_triangular_matrix_inverse(A):
     >>> find_triangular_matrix_inverse(A) == Mat(({0, 1, 2, 3}, {0, 1, 2, 3}), {(0, 1): -0.5, (1, 2): -0.3, (3, 2): 0.0, (0, 0): 1.0, (3, 3): 1.0, (3, 0): 0.0, (3, 1): 0.0, (2, 1): 0.0, (0, 2): -0.05000000000000002, (2, 0): 0.0, (1, 3): -0.87, (2, 3): -0.1, (2, 2): 1.0, (1, 0): 0.0, (0, 3): -3.545, (1, 1): 1.0})
     True
     '''
-    pass
+    return find_matrix_inverse(A)
+
